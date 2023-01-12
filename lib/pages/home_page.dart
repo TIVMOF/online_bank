@@ -103,7 +103,17 @@ class _HomePageState extends State<HomePage> {
             ),
             ),
 
+            SizedBox(height: 25),
+
           // 3 buttons ->send + pay + bills
+          Row(children: [
+            // send button
+            
+
+            //pay button
+
+            //bills button
+          ],),
       
           // column -> stats + transaction
         ],),
