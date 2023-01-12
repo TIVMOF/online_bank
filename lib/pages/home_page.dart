@@ -93,7 +93,15 @@ class _HomePageState extends State<HomePage> {
             )
           ),
 
-          SmoothPageIndicator(controller: _controller, count: 3),
+          SizedBox(height: 20),
+
+          SmoothPageIndicator(
+            controller: _controller, 
+            count: 3,
+            effect: ExpandingDotsEffect(
+              activeDotColor: Colors.blue.shade900,
+            ),
+            ),
 
           // 3 buttons ->send + pay + bills
       
