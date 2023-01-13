@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_bank/utill/my_button.dart';
 import 'package:online_bank/utill/my_card.dart';
+import 'package:online_bank/utill/my_list_tile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> {
             ),
             ),
 
-            SizedBox(height: 25),
+            SizedBox(height: 40),
 
           // 3 buttons ->send + pay + bills
           Padding(
@@ -122,29 +123,26 @@ class _HomePageState extends State<HomePage> {
               MyButton(iconImagePath: 'lib/icons/bill.png', buttonText: 'Bills'),
             ],),
           ),
-
-          SizedBox(height: 25,),
       
           // column -> stats + transaction
-          Column(children: [
-            //Stats
-            Row(children: [
-              //Icon
-              Container(
-                height: 80,
-                child: Image.asset('lib/icons/statistics.png'),
-                ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(children: [
+              //Stats
+              MyListTile(
+                iconImagePath: 'lib/icons/statistics.png', 
+                tileTitle: 'Statistics', 
+                tileSubtitle: 'Payments and Income'
+              ),
 
-                Column(children: [
-                  Text('Statistics'),
-                  Text('Payments and Income'),
-                ],),
-
-                Icon(Icons.arrow_forward),
-            ],)
-
-            //Transactions
-          ],)
+              //Transactions
+              MyListTile(
+                iconImagePath: 'lib/icons/lending.png', 
+                tileTitle: 'Transactions', 
+                tileSubtitle: 'Transaction History'
+              )
+            ],),
+          )
         ],),
       ),
     );
