@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:online_bank/utill/my_button.dart';
 import 'package:online_bank/utill/my_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -106,16 +107,44 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 25),
 
           // 3 buttons ->send + pay + bills
-          Row(children: [
-            // send button
-            
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              // send button
+              MyButton(iconImagePath: 'lib/icons/send.png', buttonText: 'Send'),
+              
+              //pay button
+              MyButton(iconImagePath: 'lib/icons/credit-card.png', buttonText: 'Pay'),
 
-            //pay button
+              //bills button
+              MyButton(iconImagePath: 'lib/icons/bill.png', buttonText: 'Bills'),
+            ],),
+          ),
 
-            //bills button
-          ],),
+          SizedBox(height: 25,),
       
           // column -> stats + transaction
+          Column(children: [
+            //Stats
+            Row(children: [
+              //Icon
+              Container(
+                height: 80,
+                child: Image.asset('lib/icons/statistics.png'),
+                ),
+
+                Column(children: [
+                  Text('Statistics'),
+                  Text('Payments and Income'),
+                ],),
+
+                Icon(Icons.arrow_forward),
+            ],)
+
+            //Transactions
+          ],)
         ],),
       ),
     );

@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({super.key});
+
+  final String iconImagePath;
+  final String buttonText;
+
+  const MyButton({
+    super.key,
+    required this.iconImagePath,
+    required this.buttonText
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +17,10 @@ class MyButton extends StatelessWidget {
               children: [
                 // icon
                 Container(
-                  height: 100,
+                  height: 80,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.grey[100],
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
@@ -23,12 +31,12 @@ class MyButton extends StatelessWidget {
                     ],
                   ),
                   child: Center(
-                    child: Image.asset('lib/icons/send.png')),
+                    child: Image.asset(iconImagePath)),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 7,),
                 // text
                 Text(
-                  'Send',
+                  buttonText,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
