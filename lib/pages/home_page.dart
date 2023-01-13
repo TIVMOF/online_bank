@@ -20,6 +20,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {}, 
+        backgroundColor: Colors.blue.shade600,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[200],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.home),
+              iconSize: 30,
+              color: Colors.blue.shade900,
+              ),
+            IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.settings),
+              iconSize: 30,
+              color: Colors.blue.shade900,
+              ),
+        ],),
+      ),
       body: SafeArea(
         child: Column(children: [
           // app bar
