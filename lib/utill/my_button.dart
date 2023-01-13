@@ -20,12 +20,11 @@ class MyButton extends StatelessWidget {
                   height: 80,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.shade400,
-                        blurRadius: 40,
+                        color: Colors.white,
+                        blurRadius: 30,
                         spreadRadius: 10,
                       )
                     ],
