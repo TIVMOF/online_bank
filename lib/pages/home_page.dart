@@ -5,6 +5,7 @@ import 'package:online_bank/utill/my_button.dart';
 import 'package:online_bank/utill/my_card.dart';
 import 'package:online_bank/utill/my_list_tile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:online_bank/pages/Send_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -128,13 +129,46 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
               // send button
-              MyButton(iconImagePath: 'lib/icons/send.png', buttonText: 'Send'),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MySend()));
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+                  ),
+                child: MyButton(iconImagePath: 'lib/icons/send.png', buttonText: 'Send',)
+              ),
               
               //pay button
-              MyButton(iconImagePath: 'lib/icons/credit-card.png', buttonText: 'Pay'),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MySend()));
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+                  ),
+                child: MyButton(iconImagePath: 'lib/icons/credit-card.png', buttonText: 'Pay',)
+              ),
 
               //bills button
-              MyButton(iconImagePath: 'lib/icons/bill.png', buttonText: 'Bills'),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MySend()));
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+                  ),
+                child: MyButton(iconImagePath: 'lib/icons/bill.png', buttonText: 'Bills',)
+              ),
             ],),
           ),
       
@@ -161,4 +195,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+MySend count() {
+  return MySend();
 }
