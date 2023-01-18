@@ -67,16 +67,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                   ],
                 ),
-
-                // plus button
-                Container(
-                  padding: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    shape: BoxShape.circle,
-                    ),
-                  child: Icon(Icons.add)
-                ),
                 ],
               ),
           ),
