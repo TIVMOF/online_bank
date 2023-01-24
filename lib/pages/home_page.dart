@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:online_bank/pages/about_page.dart';
+import 'package:online_bank/utill/bottom_app_bar.dart';
 import 'package:online_bank/utill/my_button.dart';
 import 'package:online_bank/utill/my_card.dart';
 import 'package:online_bank/utill/my_list_tile.dart';
@@ -17,43 +18,14 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
+
   final _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: BottomAppBar(
-              color: Colors.grey[200],
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MyAbout()));
-                    }, 
-                    icon: Icon(Icons.question_answer),
-                    iconSize: 25,
-                    color: Colors.blue.shade900,
-                    ),
-                  IconButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                    }, 
-                    icon: Icon(Icons.home),
-                    iconSize: 35,
-                    color: Colors.blue.shade900,
-                    ),
-                  IconButton(
-                    onPressed: (){
-                      Navigator.of(context).pop();
-                    }, 
-                    icon: Icon(Icons.arrow_back_ios),
-                    iconSize: 25,
-                    color: Colors.blue.shade900,
-                    ),
-              ],),
-            ),
+      bottomNavigationBar: AppBarBottom(context: context),
       body: SafeArea(
         child: Column(children: [
           // app bar
@@ -156,7 +128,7 @@ class _HomePageState extends State<HomePage> {
               // send button
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MySend()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SendPage(context: context,)));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -170,7 +142,7 @@ class _HomePageState extends State<HomePage> {
               //pay button
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MySend()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SendPage(context: context,)));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -184,7 +156,7 @@ class _HomePageState extends State<HomePage> {
               //bills button
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MySend()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SendPage(context: context,)));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -222,6 +194,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-MySend count() {
-  return MySend();
-}
+//SendPage count() {
+  //return SendPage();
+//}

@@ -1,10 +1,20 @@
 import "package:flutter/material.dart";
+import 'package:online_bank/pages/about_page.dart';
+import 'package:online_bank/pages/home_page.dart';
+import 'package:online_bank/utill/bottom_app_bar.dart';
 
-class MyAbout extends StatelessWidget {
-  const MyAbout({super.key});
+class AboutPage extends StatelessWidget {
+  final BuildContext context;
+
+  const AboutPage({
+    required this.context
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      bottomNavigationBar: AppBarBottom(context: this.context),
+    );
   }
 }
