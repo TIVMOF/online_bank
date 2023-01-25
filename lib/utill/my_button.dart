@@ -23,7 +23,7 @@ class MyButton extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
+                    foregroundColor: Colors.transparent,
                     elevation: 0,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
                   ),
