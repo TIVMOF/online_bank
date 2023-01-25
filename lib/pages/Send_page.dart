@@ -1,6 +1,4 @@
 import "package:flutter/material.dart";
-import "package:online_bank/pages/about_page.dart";
-import "package:online_bank/pages/home_page.dart";
 import 'package:online_bank/utill/bottom_app_bar.dart';
 
 class SendPage extends StatelessWidget {

@@ -126,48 +126,29 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
               // send button
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SendPage(context: context,)));
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                  ),
-                child: MyButton(iconImagePath: 'lib/icons/send.png', buttonText: 'Send',)
-              ),
+              MyButton(
+                iconImagePath: 'lib/icons/send.png', 
+                buttonText: 'Send', 
+                page: SendPage(context: context)
+                ),
               
               //pay button
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SendPage(context: context,)));
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                  ),
-                child: MyButton(iconImagePath: 'lib/icons/credit-card.png', buttonText: 'Pay',)
-              ),
+              MyButton(
+                iconImagePath: 'lib/icons/credit-card.png', 
+                buttonText: 'Pay', 
+                page: SendPage(context: context)
+                ),
       
               //bills button
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SendPage(context: context,)));
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                  ),
-                child: MyButton(iconImagePath: 'lib/icons/bill.png', buttonText: 'Bills',)
-              ),
+              MyButton(
+                iconImagePath: 'lib/icons/bill.png', 
+                buttonText: 'Bills', 
+                page: SendPage(context: context)
+                ),
             ],),
           ),
+
+          SizedBox(height: 20),
         
           // column -> stats + transaction
           Padding(
@@ -193,7 +174,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-//SendPage count() {
-  //return SendPage();
-//}

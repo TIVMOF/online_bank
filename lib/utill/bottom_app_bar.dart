@@ -25,7 +25,7 @@ class AppBarBottom extends StatelessWidget {
                 color: Colors.blue.shade800,
                 ),
               onPressed: () {
-                callAbout(this.context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage(context: context,)));
               },
             ),
             IconButton(
@@ -34,7 +34,7 @@ class AppBarBottom extends StatelessWidget {
                 color: Colors.blue.shade800,
                 ),
               onPressed: () {
-                callHome(this.context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
             IconButton(
@@ -43,23 +43,11 @@ class AppBarBottom extends StatelessWidget {
                 color: Colors.blue.shade800,
                 ),
               onPressed: () {
-                callBack(this.context);
+                Navigator.pop(context);
               },
             ),
           ],
         ),
       );
   }
-}
-
-void callAbout (BuildContext context){
-   Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage(context: context,)));
-}
-
-void callHome (BuildContext context){
-   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-}
-
-void callBack (BuildContext context){
-   Navigator.pop(context);
 }

@@ -6,45 +6,58 @@ class MyButton extends StatelessWidget {
 
   final String iconImagePath;
   final String buttonText;
+  final Widget page;
 
   const MyButton({
     super.key,
     required this.iconImagePath,
-    required this.buttonText
+    required this.buttonText,
+    required this.page,
     });
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-              children: [
-                // icon
-                Container(
-                  height: 80,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white,
-                        blurRadius: 30,
-                        spreadRadius: 10,
-                      )
-                    ],
+    return  ElevatedButton(
+      onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => this.page));
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
                   ),
-                  child: Center(
-                    child: Image.asset(iconImagePath)),
-                ),
-                SizedBox(height: 7,),
-                // text
-                Text(
-                  buttonText,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[700],
+      child: Column(
+                children: [
+                  // icon
+                  Container(
+                    height: 50,
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white,
+                          blurRadius: 30,
+                          spreadRadius: 5,
+                        )
+                      ],
                     ),
+                    child: Center(
+                      child: Image.asset(iconImagePath)),
                   ),
-              ],
-            );
+                  SizedBox(height: 5),
+                  // text
+                  Text(
+                    buttonText,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[700],
+                      ),
+                    ),
+                ],
+              ),
+    );
   }
 }
