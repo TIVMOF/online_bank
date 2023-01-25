@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:online_bank/pages/about_page.dart';
+import 'package:online_bank/pages/pay_page.dart';
 import 'package:online_bank/utill/app_bar.dart';
 import 'package:online_bank/utill/bottom_app_bar.dart';
 import 'package:online_bank/utill/my_button.dart';
@@ -9,6 +10,8 @@ import 'package:online_bank/utill/my_card.dart';
 import 'package:online_bank/utill/my_list_tile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:online_bank/pages/send_page.dart';
+
+import 'bills_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -99,14 +102,14 @@ class _HomePageState extends State<HomePage> {
               MyButton(
                 iconImagePath: 'lib/icons/credit-card.png', 
                 buttonText: 'Pay', 
-                page: SendPage(context: context)
+                page: PayPage(context: context)
                 ),
       
               //bills button
               MyButton(
                 iconImagePath: 'lib/icons/bill.png', 
                 buttonText: 'Bills', 
-                page: SendPage(context: context)
+                page: BillsPage(context: context)
                 ),
             ],),
           ),

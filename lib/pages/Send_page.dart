@@ -20,6 +20,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
   late AnimationController _controller;
   late Animation _animation;
   bool isActive = false;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -52,46 +53,55 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: AppBarBottom(context: this.widget.context),
+      bottomNavigationBar: AppBarBottom(context: this.context),
       body: SafeArea(
-        child: Column(children: [
-          // app bar
-          MyAppBar(first_name: 'Send', second_name: 'Money'),
-
-          SizedBox(height: 20),
-
-          // sending animation
-          Container(
-            alignment: Alignment.center,
-            child: AnimatedBuilder(
-              animation: _animation,
-              builder: (context, child) {
-                return SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: CircularProgressIndicator(
-                    value: _animation.value,
-                    backgroundColor: Colors.white,
-                    valueColor: AlwaysStoppedAnimation(Colors.blue),
-                    strokeWidth: 20.0,
-                  ),
-                );
-              },
+        child: Form(
+          key: _formKey,
+          child: Column(children: [
+            // app bar
+            MyAppBar(first_name: 'Send', second_name: 'Money'),
+        
+            SizedBox(height: 20),
+        
+            // sending animation
+            Container(
+              alignment: Alignment.center,
+              child: AnimatedBuilder(
+                animation: _animation,
+                builder: (context, child) {
+                  return SizedBox(
+                    height: 300,
+                    width: 300,
+                    child: CircularProgressIndicator(
+                      value: _animation.value,
+                      backgroundColor: Colors.white,
+                      valueColor: AlwaysStoppedAnimation(Colors.blue),
+                      strokeWidth: 20.0,
+                    ),
+                  );
+                },
+                ),
+        ),
+        
+            // choose amount of money
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Enter a search term',
               ),
-),
-
-          // choose amount of money
-
-          SizedBox(height: 20),
-
-          // send button
-          MaterialButton(
-            color: Colors.blue.shade700,
-            onPressed: isActive ? stopAnimation: startAnimation,
-            child: Text('Pay'),
-            )
-
-        ],),
+            ),
+        
+            SizedBox(height: 20),
+        
+            // send button
+            MaterialButton(
+              color: Colors.blue.shade700,
+              onPressed: isActive ? stopAnimation: startAnimation,
+              child: Text('Pay'),
+              )
+        
+          ],),
+        ),
         ),
     );
   }
