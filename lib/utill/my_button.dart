@@ -22,6 +22,7 @@ class MyButton extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => this.page));
                 },
                 style: ElevatedButton.styleFrom(
+                    shadowColor: Colors.transparent,
                     backgroundColor: Colors.transparent,
                     foregroundColor: Colors.transparent,
                     elevation: 0,

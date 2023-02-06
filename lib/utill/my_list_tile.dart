@@ -26,10 +26,10 @@ class MyListTile extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(builder: (context) => this.page));
         },
         style: ElevatedButton.styleFrom(
+                    shadowColor: Colors.transparent,
                     backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.transparent,
+                    foregroundColor: Colors.black,
                     elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
                   ),
         child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
