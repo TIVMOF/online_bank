@@ -41,6 +41,10 @@ class _BillsPageState extends State<BillsPage> {
                     Container(
                       width: 500,
                       color: Color.fromARGB(60, 0, 66, 117),
+                      child: Column(children: [
+                        Text('Total',
+                        ),
+                      ],),
                     )
                   ],
                 ),

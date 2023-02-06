@@ -88,12 +88,6 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
             // choose amount of money
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
-              ),
             ),
         
             SizedBox(height: 25),
