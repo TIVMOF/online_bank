@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_bank/pages/about_page.dart';
 import 'package:online_bank/pages/pay_page.dart';
+import 'package:online_bank/pages/statistics_page.dart';
+import 'package:online_bank/pages/transaction_page.dart';
 import 'package:online_bank/utill/app_bar.dart';
 import 'package:online_bank/utill/bottom_app_bar.dart';
 import 'package:online_bank/utill/my_button.dart';
@@ -124,14 +126,16 @@ class _HomePageState extends State<HomePage> {
               MyListTile(
                 iconImagePath: 'lib/icons/statistics.png', 
                 tileTitle: 'Statistics', 
-                tileSubtitle: 'Payments and Income'
+                tileSubtitle: 'Payments and Income',
+                page: StatsPage(),
               ),
       
               //Transactions
               MyListTile(
                 iconImagePath: 'lib/icons/lending.png', 
                 tileTitle: 'Transactions', 
-                tileSubtitle: 'Transaction History'
+                tileSubtitle: 'Transaction History',
+                page: TransactionPage(),
               )
             ],),
           )
