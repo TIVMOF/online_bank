@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import "package:flutter/material.dart";
 import 'package:online_bank/utill/app_bar.dart';
@@ -61,7 +61,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
             // app bar
             MyAppBar(first_name: 'Send', second_name: 'Money'),
         
-            SizedBox(height: 20),
+            SizedBox(height: 40),
         
             // sending animation
             Container(
@@ -81,24 +81,51 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
                   );
                 },
                 ),
-        ),
+            ),
+
+            SizedBox(height: 35,),
         
             // choose amount of money
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter a search term',
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a search term',
+                ),
               ),
             ),
         
-            SizedBox(height: 20),
+            SizedBox(height: 25),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a search term',
+                ),
+              ),
+            ),
+
+            SizedBox(height: 25,),
         
             // send button
-            MaterialButton(
-              color: Colors.blue.shade700,
-              onPressed: isActive ? stopAnimation: startAnimation,
-              child: Text('Pay'),
-              )
+            SizedBox(
+              height: 50,
+              width: 100,
+              child: MaterialButton(
+                color: Colors.blue.shade700,
+                onPressed: isActive ? stopAnimation: startAnimation,
+                child: Text(
+                  'Pay',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                  ),
+                ),
+            )
         
           ],),
         ),
