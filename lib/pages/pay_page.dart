@@ -18,7 +18,7 @@ class _PayPageState extends State<PayPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: AppBarBottom(context: this.widget.context),
+      bottomNavigationBar: AppBarBottom(context: context),
       body: SafeArea(
         child: Column(children: [
           MyAppBar(first_name: 'Pay', second_name: 'Now')

@@ -95,10 +95,6 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
               ),
             ),
 
