@@ -21,6 +21,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
   late Animation _animation;
   bool isActive = false;
   final _formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -84,19 +85,28 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
             ),
 
             SizedBox(height: 35,),
+
+            Container(child: 
+              Form(
+                key: formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Въведи сума:"
+                      ),
+                    )
+                  ],
+                )
+                ),
+            ),
         
             // choose amount of money
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            ),
-        
-            SizedBox(height: 25),
+            
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: TextField(
-              ),
-            ),
+            // where to send
+            
 
             SizedBox(height: 25,),
         
@@ -108,7 +118,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
                 color: Colors.blue.shade700,
                 onPressed: isActive ? stopAnimation: startAnimation,
                 child: Text(
-                  'Send',
+                  'Прати',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,

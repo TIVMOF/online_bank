@@ -95,21 +95,21 @@ class _HomePageState extends State<HomePage> {
               // send button
               MyButton(
                 iconImagePath: 'lib/icons/send.png', 
-                buttonText: 'Send', 
+                buttonText: 'Прати', 
                 page: SendPage(context: context)
                 ),
               
               //pay button
               MyButton(
                 iconImagePath: 'lib/icons/credit-card.png', 
-                buttonText: 'Pay', 
+                buttonText: 'Плати', 
                 page: PayPage(context: context)
                 ),
       
               //bills button
               MyButton(
                 iconImagePath: 'lib/icons/bill.png', 
-                buttonText: 'Bills', 
+                buttonText: 'Сметки', 
                 page: BillsPage(context: context)
                 ),
             ],),
@@ -124,16 +124,16 @@ class _HomePageState extends State<HomePage> {
               //Stats
               MyListTile(
                 iconImagePath: 'lib/icons/statistics.png', 
-                tileTitle: 'Statistics', 
-                tileSubtitle: 'Payments and Income',
+                tileTitle: 'Статистики', 
+                tileSubtitle: 'Разплащания и Доходи',
                 page: StatsPage(),
               ),
       
               //Transactions
               MyListTile(
                 iconImagePath: 'lib/icons/lending.png', 
-                tileTitle: 'Transactions', 
-                tileSubtitle: 'Transaction History',
+                tileTitle: 'Трансакции', 
+                tileSubtitle: 'История',
                 page: TransactionPage(),
               )
             ],),

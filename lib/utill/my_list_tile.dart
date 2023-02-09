@@ -47,7 +47,7 @@ class MyListTile extends StatelessWidget {
                     child: Image.asset(iconImagePath),
                     ),
       
-                    SizedBox(width: 20,),
+                    SizedBox(width: 5,),
       
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
