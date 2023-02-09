@@ -108,7 +108,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
                 color: Colors.blue.shade700,
                 onPressed: isActive ? stopAnimation: startAnimation,
                 child: Text(
-                  'Pay',
+                  'Send',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
