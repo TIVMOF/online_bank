@@ -60,7 +60,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
           key: _formKey,
           child: Column(children: [
             // app bar
-            MyAppBar(first_name: 'Send', second_name: 'Money'),
+            MyAppBar(first_name: 'Прати', second_name: 'Пари'),
         
             SizedBox(height: 40),
         
@@ -92,6 +92,7 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // choose amount of money
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: "Въведи сума:"
@@ -101,8 +102,6 @@ class _SendPageState extends State<SendPage> with TickerProviderStateMixin{
                 )
                 ),
             ),
-        
-            // choose amount of money
             
 
             // where to send
