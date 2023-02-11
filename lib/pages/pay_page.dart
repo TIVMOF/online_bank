@@ -21,7 +21,7 @@ class _PayPageState extends State<PayPage> {
       bottomNavigationBar: AppBarBottom(context: context),
       body: SafeArea(
         child: Column(children: [
-          MyAppBar(first_name: 'Pay', second_name: 'Now')
+          MyAppBar(first_name: 'Плати', second_name: 'Сега')
         ],)
         ),
     );

@@ -28,7 +28,7 @@ class _BillsPageState extends State<BillsPage> {
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(first_name: 'Your', second_name: 'Bills'),
+            MyAppBar(first_name: 'Вашите', second_name: 'Сметки'),
 
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 25.0),

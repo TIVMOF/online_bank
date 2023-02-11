@@ -23,7 +23,7 @@ class _AboutPageState extends State<AboutPage> {
       bottomNavigationBar: AppBarBottom(context: context),
       body: SafeArea(
         child: Column(children: [
-          MyAppBar(first_name: 'About', second_name: 'Us'),
+          MyAppBar(first_name: 'За', second_name: 'Нас'),
         ],) 
         ),
     );

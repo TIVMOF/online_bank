@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_bank/utill/app_bar.dart';
 
 import '../utill/bottom_app_bar.dart';
 
@@ -15,6 +16,11 @@ class _StatsPageState extends State<StatsPage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       bottomNavigationBar: AppBarBottom(context: context),
+      body: SafeArea(
+        child: Column(children: [
+          MyAppBar(first_name: 'Статистики', second_name: '')
+        ],)
+        ),
     );
   }
 }
