@@ -3,7 +3,8 @@
 import "package:flutter/material.dart";
 import 'package:online_bank/utill/app_bar.dart';
 import 'package:online_bank/utill/bottom_app_bar.dart';
-import 'package:readmore/readmore.dart';
+
+import '../utill/read_more.dart';
 
 class AboutPage extends StatefulWidget {
   final BuildContext context;
@@ -17,8 +18,6 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  String content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae auctor justo, vitae suscipit velit. Praesent laoreet malesuada ante quis rhoncus. Etiam ornare gravida sagittis. Vestibulum mattis mi pellentesque aliquet euismod. Nullam at diam erat. Ut massa arcu, tincidunt vitae dolor eget, gravida volutpat lacus. Nunc vulputate vitae massa quis porta. Duis quam metus, viverra mollis laoreet vel, molestie ut tortor. Donec at libero justo. Aliquam erat volutpat. Praesent ut tristique augue. Vivamus vel molestie arcu, eu finibus leo. Nullam sed felis efficitur, pellentesque mi eget, iaculis urna. Pellentesque finibus lectus magna, eget pulvinar leo ornare quis. Integer porttitor dolor quis eros pretium dignissim. Pellentesque blandit, augue eget pharetra lobortis, felis risus ornare lectus, at mattis ipsum neque at elit. Sed consectetur, dui ut dictum porttitor, diam erat pharetra massa, a porttitor dui diam lobortis lorem. Donec consequat leo finibus purus ornare, vel tempor nibh rutrum. Morbi at felis convallis, pellentesque lacus vel, hendrerit lacus. Aenean feugiat velit vel semper placerat. Sed lobortis vel lacus ac blandit. Phasellus lobortis odio ut magna scelerisque lobortis. Nullam rutrum tellus id ipsum dignissim, nec dignissim ante mattis. Nam quis ornare lacus. Fusce laoreet vitae tellus et semper';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,35 +28,96 @@ class _AboutPageState extends State<AboutPage> {
         child: SingleChildScrollView(
           child: Column(children: [
             MyAppBar(first_name: 'За', second_name: 'Нас'),
-          
-            SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.all(20),
-                child: ReadMoreText(
-                  content,
-                  trimLines: 12,
-                  textAlign: TextAlign.justify,
-                  trimMode: TrimMode.Line,
-                  trimCollapsedText: ' Покажи още ',
-                  trimExpandedText: ' Покажи по-малко ',
-        
-                  lessStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey,
-                  ),
-        
-                  moreStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey,
-                  ),
-        
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 2,
-                  ),
-                  )
+
+            // About the bank
+            MyRead(
+              content: 'Proper Invest Bank', 
+              trimLines: 1, 
+              align: TextAlign.center, 
+              size: 25, 
+              weight: FontWeight.bold
               ),
-            )
+          
+            MyRead(
+              content: '„Пропър Инвест Банк“ АД е учредена на 10 октомври 2022 година Акционерният капитал на Банката възлиза на 13 000 000  лева и е разпределен на 13 безналични, поименни акции, всяка с номинална стойност 1 000 000.00 лева и право на глас.', 
+              trimLines: 7, 
+              align: TextAlign.justify, 
+              size: 16, 
+              weight: FontWeight.normal
+              ),
+
+            MyRead(
+              content: '„Пропър Инвест Банк“ АД има двустепенна форма на управление, състояща се от Надзорен и Управителен съвет.', 
+              trimLines: 3, 
+              align: TextAlign.justify, 
+              size: 16, 
+              weight: FontWeight.normal
+              ),
+
+            MyRead(
+              content: 'Ние сме малка, но качествена финансова институция и осигуряваме конфиденциалност и защита интересите на клиентите на банката. Стремим се към: Непрекъснато повишаване качеството на обслужване на своите клиентите; Изграждане на финансово стабилна и просперираща институция; Увеличаване броя и качеството на предлаганите услуги; Повишаване ефективността от дейността й; Понататъшно ускоряване развитието и усъвършенстване на използваните информационни технологии.',
+              trimLines: 4, 
+              align: TextAlign.justify, 
+              size: 16, 
+              weight: FontWeight.normal
+              ),
+
+            MyRead(
+              content: 'Ние ще ви помогнем: Да увеличите средствата чрез депозит; Да увеличите капитала си чрез набирателна сметка; Да плащате и разполагате със средства навсякъде, лесно и удобно с банкова платежна  карта', 
+              trimLines: 1, 
+              align: TextAlign.justify, 
+              size: 16, 
+              weight: FontWeight.normal
+              ),
+            
+            MyRead(
+              content: 'Банкови продукти и услуги: Банкови сметки-(Разплащателна сметка, Набирателна сметка, Депозитна сметка, Спестовна сметка); Вложения-(Влогове и депозити); Банкови платежни карти-(Дебитни и кредитни карти); Банкови платежни документи;', 
+              trimLines: 1, 
+              align: TextAlign.justify, 
+              size: 16, 
+              weight: FontWeight.normal
+              ),
+
+            MyRead(
+              content: 'Нашата подготовка: Гарантиране на влоговете и депозитите със закон; Съставяне на регламентиран законен договор за всяка услуга; Съставяне на документите от надежден и високо компетентен екип;', 
+              trimLines: 1, 
+              align: TextAlign.justify, 
+              size: 16, 
+              weight: FontWeight.normal
+              ),
+
+            MyRead(
+              content: 'Ние сме ПРАВИЛНИЯТ ИЗБОР!', 
+              trimLines: 2, 
+              align: TextAlign.center, 
+              size: 20, 
+              weight: FontWeight.bold),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Divider(
+                color: Colors.grey, 
+                thickness: 3,
+                ),
+            ),
+
+            // About the app
+            MyRead(
+              content: 'PI Smart', 
+              trimLines: 2, 
+              align: TextAlign.center, 
+              size: 25, 
+              weight: FontWeight.bold),
+
+            Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Divider(
+              color: Colors.grey, 
+              thickness: 3,
+                ),
+              ),
+
+            
           ],),
         ) 
         ),
