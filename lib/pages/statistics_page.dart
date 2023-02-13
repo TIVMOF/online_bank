@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:online_bank/utill/app_bar.dart';
+import 'package:online_bank/utill/my_chart.dart';
 
 import '../utill/bottom_app_bar.dart';
+import '../utill/coordinate.dart';
 
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key});
@@ -18,7 +20,12 @@ class _StatsPageState extends State<StatsPage> {
       bottomNavigationBar: AppBarBottom(context: context),
       body: SafeArea(
         child: Column(children: [
-          MyAppBar(first_name: 'Статистики', second_name: '')
+          MyAppBar(first_name: 'Статистики', second_name: ''),
+
+          Container(
+            padding: EdgeInsets.all(20),
+            child: MyChart(Coordinates),
+          )
         ],)
         ),
     );
