@@ -22,10 +22,7 @@ class _StatsPageState extends State<StatsPage> {
         child: Column(children: [
           MyAppBar(first_name: 'Статистики', second_name: ''),
 
-          Container(
-            padding: EdgeInsets.all(20),
-            child: MyChart(Coordinates),
-          )
+          MyChart(Coordinates),
         ],)
         ),
     );

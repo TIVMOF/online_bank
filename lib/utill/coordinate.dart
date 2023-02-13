@@ -11,7 +11,7 @@ class Coordinate {
 }
 
 List<Coordinate>get Coordinates {
-  final data = <double>[2, 5, 13, 6, 9, 3, 7];
+  final data = <double>[2, 5, 13, 6, 9, 3, 7, 9, 4, 2, 7, 2,];
 
   return data.mapIndexed(((index, element) => Coordinate(x: index.toDouble(), y: element))).toList();
 }

@@ -13,17 +13,31 @@ class MyChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2,
-      child: LineChart(
-        LineChartData(
-          lineBarsData: [
-            LineChartBarData(
-              spots: points.map((point) => FlSpot(point.x, point.y)).toList(),
-              isCurved: true,
-              dotData: FlDotData(show: true),
-            )
-          ]
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 20),
+      child: AspectRatio(
+        aspectRatio: 2,
+        child: LineChart(
+          LineChartData(
+            backgroundColor: Colors.grey.shade700,
+            gridData: FlGridData(
+              show: true,
+              drawVerticalLine: true,
+              getDrawingHorizontalLine: (value) => FlLine(
+                color: Colors.grey[300],
+                strokeWidth: 0.5,
+                dashArray: [10, 5]
+              ),
+            ),
+            lineBarsData: [
+              LineChartBarData(
+                spots: points.map((point) => FlSpot(point.x, point.y)).toList(),
+                isCurved: true,
+                dotData: FlDotData(show: true),
+              )
+            ],
+            
+          ),
         ),
       ),
     );
