@@ -39,7 +39,8 @@ dependencies:
   readmore: ^2.1.0
   url_launcher: ^6.1.9
   smooth_page_indicator:
-  fl_chart: ^0.60.0
+  syncfusion_flutter_charts: ^20.4.50
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
