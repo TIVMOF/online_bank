@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_bank/main.dart';
+import 'package:online_bank/utill/my_transaction.dart';
+import 'package:online_bank/utill/read_more.dart';
 
 import '../utill/app_bar.dart';
 import '../utill/bottom_app_bar.dart';
@@ -12,6 +14,8 @@ class TransactionPage extends StatefulWidget {
 }
 
 class _TransactionPageState extends State<TransactionPage> {
+  final _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +24,32 @@ class _TransactionPageState extends State<TransactionPage> {
       body: SafeArea(
         child: Column(children: [
           MyAppBar(first_name: 'Трансакции', second_name: ''),
+
+          // recent transactions
+          MyRead(
+            content: 'Скорошни трансакции', 
+            trimLines: 2, 
+            align: TextAlign.center, 
+            size: 25, 
+            weight: FontWeight.bold
+            ),
+
+          Container(
+            height: 300,
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              controller: _controller,
+              children: [
+                MyTransaction(
+                  recipient: 'geri',
+                  date: '16.02.2023',
+                  sum: 30.50,
+                  sentOrReceived: true,
+                ),
+                
+              ],
+            ),
+          )
         ],)
         ),
     );

@@ -125,5 +125,5 @@ class MyChart extends StatelessWidget {
 class ChartData {
         ChartData(this.x, this.y);
         final String x;
-        final double? y;
+        final double y;
     }
