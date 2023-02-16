@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_bank/utill/app_bar.dart';
 import 'package:online_bank/utill/my_chart.dart';
-
 import '../utill/bottom_app_bar.dart';
-import '../utill/coordinate.dart';
 
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key});

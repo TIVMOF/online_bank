@@ -17,58 +17,90 @@ class MyChart extends StatelessWidget {
         height: 500,
         child: SfCartesianChart(
           backgroundColor: Colors.grey[300],
+
           legend: Legend(
             isVisible: true,
             position: LegendPosition.bottom,
+            textStyle: TextStyle(
+              fontSize: 16,
+              color: Colors.black,
             ),
+            iconHeight: 20,
+            iconWidth: 20,
+            ),
+
           primaryXAxis: CategoryAxis(  
-            maximumLabels: 3,
+            interval: 1,
+            visibleMaximum: 6,
+            visibleMinimum: 3,
+            labelStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            )
           ),
-          primaryYAxis: NumericAxis(labelFormat: '{value} лв'),
+
+          primaryYAxis: NumericAxis(
+            labelFormat: '{value} лв',
+            labelStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+              ),
+            ),
+
           zoomPanBehavior: ZoomPanBehavior(  
             enablePanning: true,   
           ),  
+
           enableAxisAnimation: true,
-          title: ChartTitle(text: title),
+          title: ChartTitle(
+            text: title,
+            textStyle: TextStyle(
+              fontSize: 20,
+            )
+            ),
+
           tooltipBehavior: TooltipBehavior(enable: true),
           series: <ChartSeries>[
-            SplineAreaSeries<ChartData, String>(
+            AreaSeries<ChartData, String>(
               name: 'Разплащания',
               dataSource: [
-                ChartData('Jan', 35),
-                ChartData('Feb', 28),
-                ChartData('Mar', 34),
-                ChartData('Apr', 32),
-                ChartData('May', 40),
-                ChartData('June', 45),
-                ChartData('July', 65),
-                ChartData('August', 89),
-                ChartData('September', 40),
-                ChartData('November', 23),
-                ChartData('October', 69),
-                ChartData('December', 34),
+                ChartData('Януари', 35),
+                ChartData('Февруари', 28),
+                ChartData('Март', 34),
+                ChartData('Април', 32),
+                ChartData('Май', 40),
+                ChartData('Юни', 45),
+                ChartData('Юли', 65),
+                ChartData('Август', 89),
+                ChartData('Септември', 40),
+                ChartData('Ноември', 23),
+                ChartData('Октомври', 69),
+                ChartData('Декември', 34),
               ],
-              color: Color.fromARGB(214, 0, 140, 255),
+              color: Color.fromARGB(213, 0, 81, 255),
               xValueMapper: (ChartData data, _) => data.x,
               yValueMapper: (ChartData data, _) => data.y,
               ),
+
             SplineAreaSeries<ChartData, String>(
               name: 'Доходи',
               dataSource: [
-                ChartData('Jan', 25),
-                ChartData('Feb', 67),
-                ChartData('Mar', 58),
-                ChartData('Apr', 32),
-                ChartData('May', 56),
-                ChartData('June', 80),
-                ChartData('July', 54),
-                ChartData('August', 53),
-                ChartData('September', 78),
-                ChartData('November', 43),
-                ChartData('October', 39),
-                ChartData('December', 40),
+                ChartData('Януари', 25),
+                ChartData('Февруари', 67),
+                ChartData('Март', 58),
+                ChartData('Април', 32),
+                ChartData('Май', 56),
+                ChartData('Юни', 80),
+                ChartData('Юли', 54),
+                ChartData('Август', 53),
+                ChartData('Септември', 78),
+                ChartData('Ноември', 43),
+                ChartData('Октомври', 39),
+                ChartData('Декември', 40),
               ],
-              color: Color.fromARGB(181, 73, 173, 255),
+              color: Color.fromARGB(136, 0, 174, 255),
               xValueMapper: (ChartData data, _) => data.x,
               yValueMapper: (ChartData data, _) => data.y,
               ),
