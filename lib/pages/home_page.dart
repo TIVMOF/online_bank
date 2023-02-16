@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
             effect: ExpandingDotsEffect(
               activeDotColor: Colors.blue.shade900,
             ),
-            ),
+          ),
       
             SizedBox(height: 20),
       

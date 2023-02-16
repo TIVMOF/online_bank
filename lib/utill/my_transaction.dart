@@ -19,7 +19,7 @@ class MyTransaction extends StatelessWidget {
   final colorSent = Color.fromARGB(137, 234, 17, 1);
   final minus = '-';
 
-  final backgroundReceived = Color.fromARGB(22, 0, 186, 199);
+  final backgroundReceived = Color.fromARGB(19, 0, 217, 255);
   final textReceived = 'От:';
   final colorReceived = Color.fromARGB(130, 0, 94, 17);
   final plus = '+';

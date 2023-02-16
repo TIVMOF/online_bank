@@ -36,18 +36,59 @@ class _TransactionPageState extends State<TransactionPage> {
 
           Container(
             height: 300,
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              controller: _controller,
-              children: [
-                MyTransaction(
-                  recipient: 'geri',
-                  date: '16.02.2023',
-                  sum: 30.50,
-                  sentOrReceived: true,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 5),
+              child: Scrollbar(
+                controller: _controller,
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  controller: _controller,
+                  children: [
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: true,
+                    ),
+              
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+              
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: true,
+                    ),
+              
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+              
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: true,
+                    ),
+              
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+                    
+                  ],
                 ),
-                
-              ],
+              ),
             ),
           )
         ],)
