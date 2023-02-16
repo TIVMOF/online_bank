@@ -9,7 +9,6 @@ class StatsPage extends StatefulWidget {
   @override
   State<StatsPage> createState() => _StatsPageState();
 }
-
 class _StatsPageState extends State<StatsPage> {
   @override
   Widget build(BuildContext context) {

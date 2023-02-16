@@ -22,11 +22,11 @@ class MyChart extends StatelessWidget {
             isVisible: true,
             position: LegendPosition.bottom,
             textStyle: TextStyle(
-              fontSize: 16,
+              fontSize: 20,
               color: Colors.black,
             ),
-            iconHeight: 20,
-            iconWidth: 20,
+            iconHeight: 25,
+            iconWidth: 25,
             ),
 
           primaryXAxis: CategoryAxis(  
@@ -54,14 +54,25 @@ class MyChart extends StatelessWidget {
           ),  
 
           enableAxisAnimation: true,
+
           title: ChartTitle(
             text: title,
             textStyle: TextStyle(
               fontSize: 20,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            )
+          ),
+
+          tooltipBehavior: TooltipBehavior(
+            enable: true,
+            color: Colors.grey.shade400,
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
             )
             ),
 
-          tooltipBehavior: TooltipBehavior(enable: true),
           series: <ChartSeries>[
             AreaSeries<ChartData, String>(
               name: 'Разплащания',
