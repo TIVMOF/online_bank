@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:online_bank/main.dart';
 import 'package:online_bank/utill/my_transaction.dart';
 import 'package:online_bank/utill/read_more.dart';
 

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_this
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyListTile extends StatelessWidget {
 
@@ -23,6 +24,7 @@ class MyListTile extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 25.0),
       child: ElevatedButton(
         onPressed: () {
+          HapticFeedback.vibrate();
           Navigator.push(context, MaterialPageRoute(builder: (context) => this.page));
         },
         style: ElevatedButton.styleFrom(

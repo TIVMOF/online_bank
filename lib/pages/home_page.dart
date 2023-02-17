@@ -96,21 +96,24 @@ class _HomePageState extends State<HomePage> {
               MyButton(
                 iconImagePath: 'lib/icons/send.png', 
                 buttonText: 'Прати', 
-                page: SendPage(context: context)
+                page: SendPage(context: context),
+                is_paying: false,
                 ),
               
               //pay button
               MyButton(
                 iconImagePath: 'lib/icons/credit-card.png', 
                 buttonText: 'Плати', 
-                page: PayPage(context: context)
+                page: PayPage(context: context),
+                is_paying: true,
                 ),
       
               //bills button
               MyButton(
                 iconImagePath: 'lib/icons/bill.png', 
                 buttonText: 'Сметки', 
-                page: BillsPage(context: context)
+                page: BillsPage(context: context),
+                is_paying: false,
                 ),
             ],),
           ),

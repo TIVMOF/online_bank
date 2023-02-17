@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:online_bank/pages/about_page.dart';
 
 import '../pages/home_page.dart';
@@ -25,6 +26,7 @@ class AppBarBottom extends StatelessWidget {
                 color: Colors.blue.shade800,
                 ),
               onPressed: () {
+                HapticFeedback.vibrate();
                 Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage(context: context,)));
               },
             ),
@@ -34,6 +36,7 @@ class AppBarBottom extends StatelessWidget {
                 color: Colors.blue.shade800,
                 ),
               onPressed: () {
+                HapticFeedback.vibrate();
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
@@ -43,6 +46,7 @@ class AppBarBottom extends StatelessWidget {
                 color: Colors.blue.shade800,
                 ),
               onPressed: () {
+                HapticFeedback.vibrate();
                 Navigator.pop(context);
               },
             ),

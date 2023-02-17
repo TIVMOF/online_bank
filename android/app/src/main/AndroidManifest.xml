@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.online_bank">
+    <uses-permission android:name="android.permission.VIBRATE"/>
    <application
         android:label="PI Smart"
         android:name="${applicationName}"

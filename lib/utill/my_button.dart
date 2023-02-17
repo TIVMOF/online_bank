@@ -1,25 +1,31 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
+import 'package:flutter/services.dart';
 
 class MyButton extends StatelessWidget {
 
   final String iconImagePath;
   final String buttonText;
   final Widget page;
+  final bool is_paying;
 
   const MyButton({
     super.key,
     required this.iconImagePath,
     required this.buttonText,
     required this.page,
+    required this.is_paying,
     });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
+                  HapticFeedback.vibrate();
                   Navigator.push(context, MaterialPageRoute(builder: (context) => this.page));
+                  
                 },
                 style: ElevatedButton.styleFrom(
                     shadowColor: Colors.transparent,

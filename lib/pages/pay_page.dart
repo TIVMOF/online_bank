@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_bank/utill/app_bar.dart';
 import 'package:online_bank/utill/bottom_app_bar.dart';
-
+import 'package:online_bank/utill/my_card.dart';
 class PayPage extends StatefulWidget {
   final BuildContext context;
 
@@ -14,6 +14,7 @@ class PayPage extends StatefulWidget {
 }
 
 class _PayPageState extends State<PayPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,16 @@ class _PayPageState extends State<PayPage> {
       bottomNavigationBar: AppBarBottom(context: context),
       body: SafeArea(
         child: Column(children: [
-          MyAppBar(first_name: 'Плати', second_name: 'Сега')
+          MyAppBar(first_name: 'Плати', second_name: 'Сега'),
+
+          MyCard(
+              balance: 2000, 
+              cardNumber: 12345678, 
+              expiryDate: 02, 
+              expiryMonth: 02, 
+              expiryYear: 2024, 
+              color: Colors.green
+            ),
         ],)
         ),
     );
