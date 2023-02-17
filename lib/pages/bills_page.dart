@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:online_bank/utill/app_bar.dart';
-
+import 'package:online_bank/utill/read_more.dart';
+import '../utill/bill_item.dart';
 import '../utill/bottom_app_bar.dart';
+import '../utill/my_bill.dart';
 
 class BillsPage extends StatefulWidget {
   final BuildContext context;
@@ -30,22 +32,138 @@ class _BillsPageState extends State<BillsPage> {
           children: [
             MyAppBar(first_name: 'Вашите', second_name: 'Сметки'),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25.0),
-              child: Container(
-                height: 200,
-                child: PageView(
+            MyRead(
+              content: 'Скорошни сметки', 
+              trimLines: 2, 
+              align: TextAlign.center, 
+              size: 25, 
+              weight: FontWeight.bold,
+            ),
+
+            Container(
+              height: 600,
+              padding: EdgeInsets.only(right: 5),
+              child: Scrollbar(
+                controller: _controller,
+                child: ListView(
                   scrollDirection: Axis.vertical,
                   controller: _controller,
                   children: [
-                    Container(
-                      width: 500,
-                      color: Color.fromARGB(60, 0, 66, 117),
-                      child: Column(children: [
-                        Text('Total',
+                    MyBill(
+                      billName: 'BILLA', 
+                      billItems: [
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Мляко', 
+                          price: 2.50
                         ),
-                      ],),
-                    )
+
+                        MyBillItem(
+                          number: 4, 
+                          itemName: 'Пастет', 
+                          price: 3.99
+                        ),
+
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Хляб Добруджа', 
+                          price: 2.00
+                        ),
+
+                        MyBillItem(
+                          number: 3, 
+                          itemName: 'Кола Coca Cola', 
+                          price: 2.50
+                        ),
+                      ]
+                    ),
+
+                    MyBill(
+                      billName: 'BILLA', 
+                      billItems: [
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Мляко', 
+                          price: 2.50
+                        ),
+
+                        MyBillItem(
+                          number: 4, 
+                          itemName: 'Пастет', 
+                          price: 3.99
+                        ),
+
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Хляб Добруджа', 
+                          price: 2.00
+                        ),
+
+                        MyBillItem(
+                          number: 3, 
+                          itemName: 'Кола Coca Cola', 
+                          price: 2.50
+                        ),
+                      ]
+                    ),
+
+                    MyBill(
+                      billName: 'BILLA', 
+                      billItems: [
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Мляко', 
+                          price: 2.50
+                        ),
+
+                        MyBillItem(
+                          number: 4, 
+                          itemName: 'Пастет', 
+                          price: 3.99
+                        ),
+
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Хляб Добруджа', 
+                          price: 2.00
+                        ),
+
+                        MyBillItem(
+                          number: 3, 
+                          itemName: 'Кола Coca Cola', 
+                          price: 2.50
+                        ),
+                      ]
+                    ),
+
+                    MyBill(
+                      billName: 'BILLA', 
+                      billItems: [
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Мляко', 
+                          price: 2.50
+                        ),
+
+                        MyBillItem(
+                          number: 4, 
+                          itemName: 'Пастет', 
+                          price: 3.99
+                        ),
+
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Хляб Добруджа', 
+                          price: 2.00
+                        ),
+
+                        MyBillItem(
+                          number: 3, 
+                          itemName: 'Кола Coca Cola', 
+                          price: 2.50
+                        ),
+                      ]
+                    ),
                   ],
                 ),
               ),

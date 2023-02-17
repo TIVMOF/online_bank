@@ -95,7 +95,7 @@ class MyChart extends StatelessWidget {
               yValueMapper: (ChartData data, _) => data.y,
               ),
 
-            SplineAreaSeries<ChartData, String>(
+            AreaSeries<ChartData, String>(
               name: 'Доходи',
               dataSource: [
                 ChartData('Януари', 25),

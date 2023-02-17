@@ -30,8 +30,8 @@ class MyCard extends StatelessWidget {
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: color,
-                borderRadius: BorderRadius.circular(15)
-                ),
+                borderRadius: BorderRadius.circular(15),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

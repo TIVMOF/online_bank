@@ -14,12 +14,12 @@ class MyTransaction extends StatelessWidget {
     required this.sentOrReceived,
     });
 
-  final backgroundSent = Color.fromARGB(19, 0, 81, 255);
+  final backgroundSent = Color.fromARGB(255, 189, 201, 226);
   final textSent = 'Към:';
   final colorSent = Color.fromARGB(137, 234, 17, 1);
   final minus = '-';
 
-  final backgroundReceived = Color.fromARGB(19, 0, 217, 255);
+  final backgroundReceived = Color.fromARGB(255, 194, 219, 235);
   final textReceived = 'От:';
   final colorReceived = Color.fromARGB(130, 0, 94, 17);
   final plus = '+';
@@ -34,6 +34,14 @@ class MyTransaction extends StatelessWidget {
         decoration: BoxDecoration(
           color: sentOrReceived? backgroundReceived: backgroundSent,
           borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(193, 158, 158, 158).withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 10,
+              offset: Offset(4, 8),
+            )
+          ]
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,7 +65,6 @@ class MyTransaction extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade900,
                     ),
                   ),
                 ],
