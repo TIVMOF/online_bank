@@ -44,7 +44,7 @@ class MyCard extends StatelessWidget {
                     ),
                   SizedBox(height: 10),
                   Text(
-                    balance.toString() + 'лв',
+                    balance.toStringAsFixed(2) + 'лв',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 26,

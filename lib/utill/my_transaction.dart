@@ -86,9 +86,9 @@ class MyTransaction extends StatelessWidget {
             ],
           ),
           Text(
-            (sentOrReceived? plus: minus) + ' ' + sum.toString() + 'лв',
+            (sentOrReceived? plus: minus) + ' ' + sum.toStringAsFixed(2) + 'лв',
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 18,
               color: sentOrReceived? colorReceived: colorSent,
               fontWeight: FontWeight.bold,
             ),

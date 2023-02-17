@@ -35,7 +35,7 @@ class _TransactionPageState extends State<TransactionPage> {
             ),
 
           Container(
-            height: 300,
+            height: 600,
             child: Padding(
               padding: const EdgeInsets.only(right: 5),
               child: Scrollbar(
@@ -79,6 +79,48 @@ class _TransactionPageState extends State<TransactionPage> {
                       sentOrReceived: true,
                     ),
               
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+
+                    MyTransaction(
+                      recipient: 'Гергана Михова',
+                      date: '16.02.2023',
+                      sum: 30.50,
+                      sentOrReceived: false,
+                    ),
+
                     MyTransaction(
                       recipient: 'Гергана Михова',
                       date: '16.02.2023',
