@@ -23,9 +23,10 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-                  HapticFeedback.vibrate();
+                  is_paying? Vibration.vibrate(
+                    pattern: [800, 1000, 300, 1000, 800, 1000, 300, 1000, 800, 1000, 300, 1000]
+                  ): HapticFeedback.vibrate();
                   Navigator.push(context, MaterialPageRoute(builder: (context) => this.page));
-                  
                 },
                 style: ElevatedButton.styleFrom(
                     shadowColor: Colors.transparent,

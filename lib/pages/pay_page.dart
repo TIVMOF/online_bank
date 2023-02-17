@@ -24,14 +24,17 @@ class _PayPageState extends State<PayPage> {
         child: Column(children: [
           MyAppBar(first_name: 'Плати', second_name: 'Сега'),
 
-          MyCard(
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: MyCard(
               balance: 2000, 
               cardNumber: 12345678, 
-              expiryDate: 02, 
-              expiryMonth: 02, 
+              expiryDate: 03, 
+              expiryMonth: 04,
               expiryYear: 2024, 
-              color: Colors.green
+              color: Colors.black
             ),
+          ),
         ],)
         ),
     );

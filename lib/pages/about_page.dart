@@ -1,12 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:online_bank/utill/app_bar.dart';
 import 'package:online_bank/utill/bottom_app_bar.dart';
 import '../utill/read_more.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 class AboutPage extends StatefulWidget {
   final BuildContext context;
 
