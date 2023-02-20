@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         
           // cards
           Container(
-            height: 200,
+            height: 180,
             child: PageView(
               scrollDirection: Axis.horizontal,
               controller: _controller,
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
               MyListTile(
                 iconImagePath: 'lib/icons/statistics.png', 
                 tileTitle: 'Статистики', 
-                tileSubtitle: 'Разплащания и Доходи',
+                tileSubtitle: 'Разплащания',
                 page: StatsPage(),
               ),
       

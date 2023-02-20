@@ -41,7 +41,7 @@ class _BillsPageState extends State<BillsPage> {
             ),
 
             Container(
-              height: 600,
+              height: 540,
               padding: EdgeInsets.only(right: 5),
               child: Scrollbar(
                 controller: _controller,
@@ -79,18 +79,18 @@ class _BillsPageState extends State<BillsPage> {
                     ),
 
                     MyBill(
-                      billName: 'BILLA', 
+                      billName: 'Fantastico', 
                       billItems: [
                         MyBillItem(
-                          number: 2, 
-                          itemName: 'Мляко', 
-                          price: 2.50
+                          number: 4, 
+                          itemName: 'Бонбони Рафаело', 
+                          price: 7.80
                         ),
 
                         MyBillItem(
-                          number: 4, 
-                          itemName: 'Пастет', 
-                          price: 3.99
+                          number: 1, 
+                          itemName: 'Лютеница Хорцето', 
+                          price: 2.99
                         ),
 
                         MyBillItem(
@@ -101,8 +101,37 @@ class _BillsPageState extends State<BillsPage> {
 
                         MyBillItem(
                           number: 3, 
-                          itemName: 'Кола Coca Cola', 
+                          itemName: 'Fanta', 
                           price: 2.50
+                        ),
+
+                        MyBillItem(
+                          number: 4, 
+                          itemName: 'Носни кърпи Сухо', 
+                          price: 4.50
+                        ),
+                      ]
+                    ),
+
+                    MyBill(
+                      billName: 'JUMBO', 
+                      billItems: [
+                        MyBillItem(
+                          number: 2, 
+                          itemName: 'Плюшено мече', 
+                          price: 25.50
+                        ),
+
+                        MyBillItem(
+                          number: 4, 
+                          itemName: 'Химикалки Фабър Кастел', 
+                          price: 3.99
+                        ),
+
+                        MyBillItem(
+                          number: 3, 
+                          itemName: 'Тетрадки Бабу', 
+                          price: 2.00
                         ),
                       ]
                     ),
@@ -117,38 +146,9 @@ class _BillsPageState extends State<BillsPage> {
                         ),
 
                         MyBillItem(
-                          number: 4, 
-                          itemName: 'Пастет', 
-                          price: 3.99
-                        ),
-
-                        MyBillItem(
                           number: 2, 
-                          itemName: 'Хляб Добруджа', 
-                          price: 2.00
-                        ),
-
-                        MyBillItem(
-                          number: 3, 
-                          itemName: 'Кола Coca Cola', 
-                          price: 2.50
-                        ),
-                      ]
-                    ),
-
-                    MyBill(
-                      billName: 'BILLA', 
-                      billItems: [
-                        MyBillItem(
-                          number: 2, 
-                          itemName: 'Мляко', 
-                          price: 2.50
-                        ),
-
-                        MyBillItem(
-                          number: 4, 
-                          itemName: 'Пастет', 
-                          price: 3.99
+                          itemName: 'Зърнена закуска Нескуик', 
+                          price: 9.99
                         ),
 
                         MyBillItem(

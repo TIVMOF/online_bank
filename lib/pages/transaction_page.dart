@@ -34,7 +34,7 @@ class _TransactionPageState extends State<TransactionPage> {
             ),
 
           Container(
-            height: 600,
+            height: 540,
             child: Padding(
               padding: const EdgeInsets.only(right: 5),
               child: Scrollbar(
@@ -44,89 +44,32 @@ class _TransactionPageState extends State<TransactionPage> {
                   controller: _controller,
                   children: [
                     MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
+                      recipient: 'Виктор Киров',
+                      date: '01.02.2023',
+                      sum: 20.00,
+                      sentOrReceived: false,
+                    ),
+              
+                    MyTransaction(
+                      recipient: 'Виктор Киров',
+                      date: '25.01.2023',
+                      sum: 45.00,
                       sentOrReceived: true,
                     ),
               
                     MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
+                      recipient: 'Ния Божилска',
+                      date: '06.02.2023',
+                      sum: 45.50,
                       sentOrReceived: false,
                     ),
               
                     MyTransaction(
-                      recipient: 'Гергана Михова',
+                      recipient: 'Велизар',
                       date: '16.02.2023',
                       sum: 30.50,
                       sentOrReceived: true,
                     ),
-              
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-              
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: true,
-                    ),
-              
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-
-                    MyTransaction(
-                      recipient: 'Гергана Михова',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: false,
-                    ),
-                    
                   ],
                 ),
               ),
