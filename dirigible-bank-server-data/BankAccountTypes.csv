@@ -1,0 +1,10 @@
+BANK_ACCOUNT_TYPE_ID,BANK_ACCOUNT_TYPE_NAME
+1,Savings Account
+2,Checking Account
+3,Money Market Account
+4,Certificate of Deposit (CD)
+5,Individual Retirement Account (IRA)
+6,Health Savings Account (HSA)
+7,Student Account
+8,Joint Account
+9,Business Account

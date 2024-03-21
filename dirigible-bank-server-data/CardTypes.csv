@@ -1,0 +1,6 @@
+CARD_TYPE_ID,CARD_TYPE_Name
+1,Credit Card
+2,Debit Card
+3,Prepaid Card
+4,Charge Card
+5,Rewards Card
