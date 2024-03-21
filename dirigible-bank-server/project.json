@@ -1,1 +1,39 @@
-{"guid":"dirigible-bank-server","actions":[{"name":"Build TypeScript","commands":[{"os":"unix","command":"tsc"},{"os":"windows","command":"cmd /c tsc"}],"registry":"true"}]}
+{
+    "guid": "dirigible-bank-server",
+    "dependencies": [
+        {
+            "guid": "codbex-countries",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-countries.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-currencies",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-currencies.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-cities",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-cities.git",
+            "branch": "main"
+        }
+    ],
+    "actions": [
+        {
+            "name": "Build TypeScript",
+            "commands": [
+                {
+                    "os": "unix",
+                    "command": "tsc"
+                },
+                {
+                    "os": "windows",
+                    "command": "cmd /c tsc"
+                }
+            ],
+            "registry": "true"
+        }
+    ]
+}
