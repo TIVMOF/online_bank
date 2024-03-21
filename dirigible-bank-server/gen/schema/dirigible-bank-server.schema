@@ -46,23 +46,23 @@
                         "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
-                        "nullable": true,
-                        "name": "USERS_COUNTRY"
+                        "name": "USERS_PHONE"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 20,
+                        "type": "INTEGER",
+                        "length": 0,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
                         "name": "USERS_CITY"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 20,
+                        "type": "INTEGER",
+                        "length": 0,
                         "precision": "NaN",
                         "scale": "NaN",
-                        "name": "USERS_PHONE"
+                        "nullable": true,
+                        "name": "USERS_COUNTRY"
                     }
                 ]
             },
@@ -117,13 +117,8 @@
                         "name": "BANKACCOUNTS_BANKACCOUNTSTATUS"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "BANKACCOUNTS_CURRENCY"
-                    },
-                    {
                         "type": "DATE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "name": "BANKACCOUNTS_CREATIONDATE"
@@ -134,6 +129,14 @@
                         "precision": "NaN",
                         "scale": "NaN",
                         "name": "BANKACCOUNTS_PROPERTY9"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "BANKACCOUNTS_CURRENCY"
                     }
                 ]
             },
@@ -165,6 +168,7 @@
                     },
                     {
                         "type": "DOUBLE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
@@ -172,6 +176,7 @@
                     },
                     {
                         "type": "DATE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
@@ -208,6 +213,7 @@
                     },
                     {
                         "type": "DATE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
@@ -287,6 +293,162 @@
                 ]
             },
             {
+                "name": "PI_CURRENCY",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CURRENCY_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 3,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CURRENCY_CODE"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 127,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CURRENCY_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 3,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CURRENCY_NUMERIC"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CURRENCY_ROUNDING"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CURRENCY_BASE"
+                    },
+                    {
+                        "type": "DOUBLE",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CURRENCY_RATE"
+                    }
+                ]
+            },
+            {
+                "name": "PI_CITY",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CITY_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CITY_NAME"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "CITY_COUNTRY"
+                    }
+                ]
+            },
+            {
+                "name": "PI_COUNTRY",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "COUNTRY_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 255,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "COUNTRY_NAME"
+                    },
+                    {
+                        "type": "CHAR",
+                        "length": 2,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "COUNTRY_CODE2"
+                    },
+                    {
+                        "type": "CHAR",
+                        "length": 3,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "COUNTRY_CODE3"
+                    },
+                    {
+                        "type": "CHAR",
+                        "length": 3,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "COUNTRY_NUMERIC"
+                    }
+                ]
+            },
+            {
+                "name": "Users_City",
+                "type": "foreignKey",
+                "table": "PI_USERS",
+                "constraintName": "Users_City",
+                "columns": "USERS_CITY",
+                "referencedTable": "PI_CITY",
+                "referencedColumns": "CITY_ID"
+            },
+            {
+                "name": "Users_Country",
+                "type": "foreignKey",
+                "table": "PI_USERS",
+                "constraintName": "Users_Country",
+                "columns": "USERS_COUNTRY",
+                "referencedTable": "PI_COUNTRY",
+                "referencedColumns": "COUNTRY_ID"
+            },
+            {
                 "name": "BankAccounts_Users",
                 "type": "foreignKey",
                 "table": "PI_BANKACCOUNTS",
@@ -312,6 +474,15 @@
                 "columns": "BANKACCOUNTS_BANKACCOUNTSTATUS",
                 "referencedTable": "PI_BANKACCOUNTSTATUS",
                 "referencedColumns": "BANKACCOUNTSTATUS_ID"
+            },
+            {
+                "name": "BankAccounts_Currency",
+                "type": "foreignKey",
+                "table": "PI_BANKACCOUNTS",
+                "constraintName": "BankAccounts_Currency",
+                "columns": "BANKACCOUNTS_CURRENCY",
+                "referencedTable": "PI_CURRENCY",
+                "referencedColumns": "CURRENCY_ID"
             },
             {
                 "name": "Transactions_BankAccounts",

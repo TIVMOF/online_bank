@@ -111,6 +111,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				optionsUsers: $scope.optionsUsers,
 				optionsBankAccountType: $scope.optionsBankAccountType,
 				optionsBankAccountStatus: $scope.optionsBankAccountStatus,
+				optionsCurrency: $scope.optionsCurrency,
 			});
 		};
 
@@ -120,6 +121,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				optionsUsers: $scope.optionsUsers,
 				optionsBankAccountType: $scope.optionsBankAccountType,
 				optionsBankAccountStatus: $scope.optionsBankAccountStatus,
+				optionsCurrency: $scope.optionsCurrency,
 			});
 		};
 
@@ -131,6 +133,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				optionsUsers: $scope.optionsUsers,
 				optionsBankAccountType: $scope.optionsBankAccountType,
 				optionsBankAccountStatus: $scope.optionsBankAccountStatus,
+				optionsCurrency: $scope.optionsCurrency,
 			}, null, false);
 		};
 
@@ -141,6 +144,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				optionsUsers: $scope.optionsUsers,
 				optionsBankAccountType: $scope.optionsBankAccountType,
 				optionsBankAccountStatus: $scope.optionsBankAccountStatus,
+				optionsCurrency: $scope.optionsCurrency,
 			}, null, false);
 		};
 
@@ -177,6 +181,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.optionsUsers = [];
 		$scope.optionsBankAccountType = [];
 		$scope.optionsBankAccountStatus = [];
+		$scope.optionsCurrency = [];
 
 
 		$http.get("/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts").then(function (response) {
@@ -206,6 +211,15 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
+		$http.get("/services/ts/codbex-currencies/gen/api/Currencies/CurrencyService.ts").then(function (response) {
+			$scope.optionsCurrency = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
 		$scope.optionsUsersValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsUsers.length; i++) {
 				if ($scope.optionsUsers[i].value === optionKey) {
@@ -226,6 +240,14 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			for (let i = 0; i < $scope.optionsBankAccountStatus.length; i++) {
 				if ($scope.optionsBankAccountStatus[i].value === optionKey) {
 					return $scope.optionsBankAccountStatus[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsCurrencyValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsCurrency.length; i++) {
+				if ($scope.optionsCurrency[i].value === optionKey) {
+					return $scope.optionsCurrency[i].text;
 				}
 			}
 			return null;

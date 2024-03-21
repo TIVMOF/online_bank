@@ -11,9 +11,9 @@ export interface BankAccountsEntity {
     Users?: number;
     BankAccountType?: number;
     BankAccountStatus?: number;
-    Currency?: string;
     CreationDate: Date;
     Property9: string;
+    Currency?: number;
 }
 
 export interface BankAccountsCreateEntity {
@@ -22,9 +22,9 @@ export interface BankAccountsCreateEntity {
     readonly Users?: number;
     readonly BankAccountType?: number;
     readonly BankAccountStatus?: number;
-    readonly Currency?: string;
     readonly CreationDate: Date;
     readonly Property9: string;
+    readonly Currency?: number;
 }
 
 export interface BankAccountsUpdateEntity extends BankAccountsCreateEntity {
@@ -40,9 +40,9 @@ export interface BankAccountsEntityOptions {
             Users?: number | number[];
             BankAccountType?: number | number[];
             BankAccountStatus?: number | number[];
-            Currency?: string | string[];
             CreationDate?: Date | Date[];
             Property9?: string | string[];
+            Currency?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -51,9 +51,9 @@ export interface BankAccountsEntityOptions {
             Users?: number | number[];
             BankAccountType?: number | number[];
             BankAccountStatus?: number | number[];
-            Currency?: string | string[];
             CreationDate?: Date | Date[];
             Property9?: string | string[];
+            Currency?: number | number[];
         };
         contains?: {
             Id?: number;
@@ -62,9 +62,9 @@ export interface BankAccountsEntityOptions {
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
-            Currency?: string;
             CreationDate?: Date;
             Property9?: string;
+            Currency?: number;
         };
         greaterThan?: {
             Id?: number;
@@ -73,9 +73,9 @@ export interface BankAccountsEntityOptions {
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
-            Currency?: string;
             CreationDate?: Date;
             Property9?: string;
+            Currency?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -84,9 +84,9 @@ export interface BankAccountsEntityOptions {
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
-            Currency?: string;
             CreationDate?: Date;
             Property9?: string;
+            Currency?: number;
         };
         lessThan?: {
             Id?: number;
@@ -95,9 +95,9 @@ export interface BankAccountsEntityOptions {
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
-            Currency?: string;
             CreationDate?: Date;
             Property9?: string;
+            Currency?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -106,9 +106,9 @@ export interface BankAccountsEntityOptions {
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
-            Currency?: string;
             CreationDate?: Date;
             Property9?: string;
+            Currency?: number;
         };
     },
     $select?: (keyof BankAccountsEntity)[],
@@ -169,11 +169,6 @@ export class BankAccountsRepository {
                 type: "INTEGER",
             },
             {
-                name: "Currency",
-                column: "BANKACCOUNTS_CURRENCY",
-                type: "VARCHAR",
-            },
-            {
                 name: "CreationDate",
                 column: "BANKACCOUNTS_CREATIONDATE",
                 type: "DATE",
@@ -184,6 +179,11 @@ export class BankAccountsRepository {
                 column: "BANKACCOUNTS_PROPERTY9",
                 type: "VARCHAR",
                 required: true
+            },
+            {
+                name: "Currency",
+                column: "BANKACCOUNTS_CURRENCY",
+                type: "INTEGER",
             }
         ]
     };

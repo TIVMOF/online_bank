@@ -28,6 +28,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.optionsUsers = params.optionsUsers;
 				$scope.optionsBankAccountType = params.optionsBankAccountType;
 				$scope.optionsBankAccountStatus = params.optionsBankAccountStatus;
+				$scope.optionsCurrency = params.optionsCurrency;
 			}
 		}
 
@@ -69,9 +70,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (entity.BankAccountStatus) {
 				filter.$filter.equals.BankAccountStatus = entity.BankAccountStatus;
 			}
-			if (entity.Currency) {
-				filter.$filter.contains.Currency = entity.Currency;
-			}
 			if (entity.CreationDateFrom) {
 				filter.$filter.greaterThanOrEqual.CreationDate = entity.CreationDateFrom;
 			}
@@ -80,6 +78,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			}
 			if (entity.Property9) {
 				filter.$filter.contains.Property9 = entity.Property9;
+			}
+			if (entity.Currency) {
+				filter.$filter.equals.Currency = entity.Currency;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

@@ -32,6 +32,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.optionsUsers = params.optionsUsers;
 				$scope.optionsBankAccountType = params.optionsBankAccountType;
 				$scope.optionsBankAccountStatus = params.optionsBankAccountStatus;
+				$scope.optionsCurrency = params.optionsCurrency;
 			}
 		}
 

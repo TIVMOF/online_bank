@@ -128,9 +128,6 @@ class BankAccountsService {
         if (entity.Property3?.length > 20) {
             throw new ValidationError(`The 'Property3' exceeds the maximum length of [20] characters`);
         }
-        if (entity.Currency?.length > 20) {
-            throw new ValidationError(`The 'Currency' exceeds the maximum length of [20] characters`);
-        }
         if (entity.Property9?.length > 255) {
             throw new ValidationError(`The 'Property9' exceeds the maximum length of [255] characters`);
         }

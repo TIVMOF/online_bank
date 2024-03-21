@@ -9,9 +9,9 @@ export interface UsersEntity {
     LName: string;
     Email: string;
     Password: string;
-    Country?: string;
-    City?: string;
     Phone: string;
+    City?: number;
+    Country?: number;
 }
 
 export interface UsersCreateEntity {
@@ -19,9 +19,9 @@ export interface UsersCreateEntity {
     readonly LName: string;
     readonly Email: string;
     readonly Password: string;
-    readonly Country?: string;
-    readonly City?: string;
     readonly Phone: string;
+    readonly City?: number;
+    readonly Country?: number;
 }
 
 export interface UsersUpdateEntity extends UsersCreateEntity {
@@ -36,9 +36,9 @@ export interface UsersEntityOptions {
             LName?: string | string[];
             Email?: string | string[];
             Password?: string | string[];
-            Country?: string | string[];
-            City?: string | string[];
             Phone?: string | string[];
+            City?: number | number[];
+            Country?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -46,9 +46,9 @@ export interface UsersEntityOptions {
             LName?: string | string[];
             Email?: string | string[];
             Password?: string | string[];
-            Country?: string | string[];
-            City?: string | string[];
             Phone?: string | string[];
+            City?: number | number[];
+            Country?: number | number[];
         };
         contains?: {
             Id?: number;
@@ -56,9 +56,9 @@ export interface UsersEntityOptions {
             LName?: string;
             Email?: string;
             Password?: string;
-            Country?: string;
-            City?: string;
             Phone?: string;
+            City?: number;
+            Country?: number;
         };
         greaterThan?: {
             Id?: number;
@@ -66,9 +66,9 @@ export interface UsersEntityOptions {
             LName?: string;
             Email?: string;
             Password?: string;
-            Country?: string;
-            City?: string;
             Phone?: string;
+            City?: number;
+            Country?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -76,9 +76,9 @@ export interface UsersEntityOptions {
             LName?: string;
             Email?: string;
             Password?: string;
-            Country?: string;
-            City?: string;
             Phone?: string;
+            City?: number;
+            Country?: number;
         };
         lessThan?: {
             Id?: number;
@@ -86,9 +86,9 @@ export interface UsersEntityOptions {
             LName?: string;
             Email?: string;
             Password?: string;
-            Country?: string;
-            City?: string;
             Phone?: string;
+            City?: number;
+            Country?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -96,9 +96,9 @@ export interface UsersEntityOptions {
             LName?: string;
             Email?: string;
             Password?: string;
-            Country?: string;
-            City?: string;
             Phone?: string;
+            City?: number;
+            Country?: number;
         };
     },
     $select?: (keyof UsersEntity)[],
@@ -156,20 +156,20 @@ export class UsersRepository {
                 required: true
             },
             {
-                name: "Country",
-                column: "USERS_COUNTRY",
-                type: "VARCHAR",
-            },
-            {
-                name: "City",
-                column: "USERS_CITY",
-                type: "VARCHAR",
-            },
-            {
                 name: "Phone",
                 column: "USERS_PHONE",
                 type: "VARCHAR",
                 required: true
+            },
+            {
+                name: "City",
+                column: "USERS_CITY",
+                type: "INTEGER",
+            },
+            {
+                name: "Country",
+                column: "USERS_COUNTRY",
+                type: "INTEGER",
             }
         ]
     };

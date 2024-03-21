@@ -1,20 +1,20 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { UsersRepository, UsersEntityOptions } from "../../dao/users/UsersRepository";
+import { CountryRepository, CountryEntityOptions } from "../../dao/Countries/CountryRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("dirigible-bank-server-users-Users", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("dirigible-bank-server-Countries-Country", ["validate"]);
 
 @Controller
-class UsersService {
+class CountryService {
 
-    private readonly repository = new UsersRepository();
+    private readonly repository = new CountryRepository();
 
     @Get("/")
     public getAll(_: any, ctx: any) {
         try {
-            const options: UsersEntityOptions = {
+            const options: CountryEntityOptions = {
                 $limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : undefined,
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
@@ -30,7 +30,7 @@ class UsersService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/dirigible-bank-server/gen/api/Countries/CountryService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
@@ -73,7 +73,7 @@ class UsersService {
             if (entity) {
                 return entity;
             } else {
-                HttpUtils.sendResponseNotFound("Users not found");
+                HttpUtils.sendResponseNotFound("Country not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -101,7 +101,7 @@ class UsersService {
                 this.repository.deleteById(id);
                 HttpUtils.sendResponseNoContent();
             } else {
-                HttpUtils.sendResponseNotFound("Users not found");
+                HttpUtils.sendResponseNotFound("Country not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -119,35 +119,17 @@ class UsersService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.FName === null || entity.FName === undefined) {
-            throw new ValidationError(`The 'FName' property is required, provide a valid value`);
+        if (entity.Name?.length > 255) {
+            throw new ValidationError(`The 'Name' exceeds the maximum length of [255] characters`);
         }
-        if (entity.FName?.length > 255) {
-            throw new ValidationError(`The 'FName' exceeds the maximum length of [255] characters`);
+        if (entity.Code2?.length > 2) {
+            throw new ValidationError(`The 'Code2' exceeds the maximum length of [2] characters`);
         }
-        if (entity.LName === null || entity.LName === undefined) {
-            throw new ValidationError(`The 'LName' property is required, provide a valid value`);
+        if (entity.Code3?.length > 3) {
+            throw new ValidationError(`The 'Code3' exceeds the maximum length of [3] characters`);
         }
-        if (entity.LName?.length > 255) {
-            throw new ValidationError(`The 'LName' exceeds the maximum length of [255] characters`);
-        }
-        if (entity.Email === null || entity.Email === undefined) {
-            throw new ValidationError(`The 'Email' property is required, provide a valid value`);
-        }
-        if (entity.Email?.length > 255) {
-            throw new ValidationError(`The 'Email' exceeds the maximum length of [255] characters`);
-        }
-        if (entity.Password === null || entity.Password === undefined) {
-            throw new ValidationError(`The 'Password' property is required, provide a valid value`);
-        }
-        if (entity.Password?.length > 255) {
-            throw new ValidationError(`The 'Password' exceeds the maximum length of [255] characters`);
-        }
-        if (entity.Phone === null || entity.Phone === undefined) {
-            throw new ValidationError(`The 'Phone' property is required, provide a valid value`);
-        }
-        if (entity.Phone?.length > 20) {
-            throw new ValidationError(`The 'Phone' exceeds the maximum length of [20] characters`);
+        if (entity.Numeric?.length > 3) {
+            throw new ValidationError(`The 'Numeric' exceeds the maximum length of [3] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);

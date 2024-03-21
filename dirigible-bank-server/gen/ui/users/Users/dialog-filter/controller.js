@@ -19,6 +19,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.entity = params.entity ?? {};
 				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 				$scope.selectedMainEntityId = params.selectedMainEntityId;
+				$scope.optionsCity = params.optionsCity;
+				$scope.optionsCountry = params.optionsCountry;
 			}
 		}
 
@@ -57,14 +59,14 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (entity.Password) {
 				filter.$filter.contains.Password = entity.Password;
 			}
-			if (entity.Country) {
-				filter.$filter.contains.Country = entity.Country;
-			}
-			if (entity.City) {
-				filter.$filter.contains.City = entity.City;
-			}
 			if (entity.Phone) {
 				filter.$filter.contains.Phone = entity.Phone;
+			}
+			if (entity.City) {
+				filter.$filter.equals.City = entity.City;
+			}
+			if (entity.Country) {
+				filter.$filter.equals.Country = entity.Country;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

@@ -32,9 +32,9 @@
 						<th fd-table-header-cell>LName</th>
 						<th fd-table-header-cell>Email</th>
 						<th fd-table-header-cell>Password</th>
-						<th fd-table-header-cell>Country</th>
-						<th fd-table-header-cell>City</th>
 						<th fd-table-header-cell>Phone</th>
+						<th fd-table-header-cell>City</th>
+						<th fd-table-header-cell>Country</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -50,10 +50,14 @@
 							<a href="mailto:{{next.Email}}" class="fd-link">{{next.Email}}</a>
 						</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Password}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Country}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.City}}</td>
 						<td fd-table-cell>
 							<a href="tel:{{next.Phone}}" class="fd-link">{{next.Phone}}</a>
+						</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
+							{{optionsCityValue(next.City)}}
+						</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
+							{{optionsCountryValue(next.Country)}}
 						</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>

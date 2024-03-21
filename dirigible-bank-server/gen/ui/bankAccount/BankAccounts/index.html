@@ -33,9 +33,9 @@
 						<th fd-table-header-cell>Users</th>
 						<th fd-table-header-cell>BankAccountType</th>
 						<th fd-table-header-cell>BankAccountStatus</th>
-						<th fd-table-header-cell>Currency</th>
 						<th fd-table-header-cell>CreationDate</th>
 						<th fd-table-header-cell>Property9</th>
+						<th fd-table-header-cell>Currency</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -56,11 +56,13 @@
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							{{optionsBankAccountStatusValue(next.BankAccountStatus)}}
 						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Currency}}</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							<fd-input type="date" ng-model="next.CreationDate" ng-readonly="true"></fd-input>
 						</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Property9}}</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
+							{{optionsCurrencyValue(next.Currency)}}
+						</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>
