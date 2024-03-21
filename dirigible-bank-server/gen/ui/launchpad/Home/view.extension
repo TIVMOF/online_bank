@@ -1,0 +1,5 @@
+{
+    "module": "dirigible-bank-server/gen/ui/launchpad/Home/view.js",
+    "extensionPoint": "dirigible-bank-server-view",
+    "description": "dirigible-bank-server - Application View"
+}
