@@ -108,12 +108,16 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Transactions-details", {
 				action: "select",
 				entity: entity,
+				optionsReciever: $scope.optionsReciever,
+				optionsSender: $scope.optionsSender,
 			});
 		};
 
 		$scope.openFilter = function (entity) {
 			messageHub.showDialogWindow("Transactions-filter", {
 				entity: $scope.filterEntity,
+				optionsReciever: $scope.optionsReciever,
+				optionsSender: $scope.optionsSender,
 			});
 		};
 
@@ -122,6 +126,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Transactions-details", {
 				action: "create",
 				entity: {},
+				optionsReciever: $scope.optionsReciever,
+				optionsSender: $scope.optionsSender,
 			}, null, false);
 		};
 
@@ -129,6 +135,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Transactions-details", {
 				action: "update",
 				entity: entity,
+				optionsReciever: $scope.optionsReciever,
+				optionsSender: $scope.optionsSender,
 			}, null, false);
 		};
 
@@ -160,5 +168,46 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		};
+
+		//----------------Dropdowns-----------------//
+		$scope.optionsReciever = [];
+		$scope.optionsSender = [];
+
+
+		$http.get("/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts").then(function (response) {
+			$scope.optionsReciever = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.IBAN
+				}
+			});
+		});
+
+		$http.get("/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts").then(function (response) {
+			$scope.optionsSender = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.IBAN
+				}
+			});
+		});
+
+		$scope.optionsRecieverValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsReciever.length; i++) {
+				if ($scope.optionsReciever[i].value === optionKey) {
+					return $scope.optionsReciever[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsSenderValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsSender.length; i++) {
+				if ($scope.optionsSender[i].value === optionKey) {
+					return $scope.optionsSender[i].text;
+				}
+			}
+			return null;
+		};
+		//----------------Dropdowns-----------------//
 
 	}]);

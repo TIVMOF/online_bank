@@ -1,8 +1,8 @@
-BANK_ACCOUNT_STATUS_ID,BANK_ACCOUNT_STATUS_NAME
-1,Active
-2,Inactive
-3,Closed
-4,Frozen
-5,Overdrawn
-6,Under Review
-7,Dormant
+"BANKACCOUNTSTATUS_ID","BANKACCOUNTSTATUS_NAME"
+1,"Active"
+2,"Inactive"
+3,"Closed"
+4,"Frozen"
+5,"Overdrawn"
+6,"Under Review"
+7,"Dormant"

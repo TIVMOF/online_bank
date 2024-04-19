@@ -137,11 +137,11 @@ class UsersService {
         if (entity.Email?.length > 255) {
             throw new ValidationError(`The 'Email' exceeds the maximum length of [255] characters`);
         }
+        if (entity.Password === null || entity.Password === undefined) {
+            throw new ValidationError(`The 'Password' property is required, provide a valid value`);
+        }
         if (entity.Password?.length > 255) {
             throw new ValidationError(`The 'Password' exceeds the maximum length of [255] characters`);
-        }
-        if (entity.Phone === null || entity.Phone === undefined) {
-            throw new ValidationError(`The 'Phone' property is required, provide a valid value`);
         }
         if (entity.Phone?.length > 20) {
             throw new ValidationError(`The 'Phone' exceeds the maximum length of [20] characters`);

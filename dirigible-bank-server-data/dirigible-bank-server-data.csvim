@@ -1,6 +1,17 @@
 {
   "files": [
     {
+      "table": "PI_CARDTYPE",
+      "schema": "PUBLIC",
+      "file": "/dirigible-bank-server-data/CardTypes.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
       "table": "PI_BANKACCOUNTSTATUS",
       "schema": "PUBLIC",
       "file": "/dirigible-bank-server-data/BankAccountStatuses.csv",
@@ -9,7 +20,7 @@
       "delimField": ",",
       "delimEnclosing": "\"",
       "distinguishEmptyFromNull": true,
-      "version": ""
+      "version": "1.0"
     },
     {
       "table": "PI_BANKACCOUNTTYPE",
@@ -20,18 +31,7 @@
       "delimField": ",",
       "delimEnclosing": "\"",
       "distinguishEmptyFromNull": true,
-      "version": ""
-    },
-    {
-      "table": "PI_CARDTYPE",
-      "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/CardTypes.csv",
-      "header": true,
-      "useHeaderNames": true,
-      "delimField": ",",
-      "delimEnclosing": "\"",
-      "distinguishEmptyFromNull": true,
-      "version": ""
+      "version": "1.0"
     }
   ]
 }

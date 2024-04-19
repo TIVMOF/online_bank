@@ -124,13 +124,6 @@
                         "name": "BANKACCOUNTS_CREATIONDATE"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 255,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "name": "BANKACCOUNTS_PROPERTY9"
-                    },
-                    {
                         "type": "INTEGER",
                         "length": 0,
                         "precision": "NaN",
@@ -401,17 +394,22 @@
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "TRANSACTIONS_RECIEVER"
                     },
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "TRANSACTIONS_SENDER"
                     },
                     {
                         "type": "DOUBLE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
@@ -419,6 +417,7 @@
                     },
                     {
                         "type": "DATE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,

@@ -98,14 +98,14 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idPassword" dg-required="false" dg-colon="true">Password</fd-form-label>
+                        	<fd-form-label for="idPassword" dg-required="true" dg-colon="true">Password</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Password'].$valid }}">
 	                            <fd-input id="idPassword"
 	                                name="Password"
 	                                state="{{ forms.details['Password'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.Password"
 	                                ng-readonly="action === 'select'"
 	                                ng-minlength="0.0 || 0"
@@ -120,7 +120,7 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idPhone" dg-required="true" dg-colon="true">Phone</fd-form-label>
+                        	<fd-form-label for="idPhone" dg-required="false" dg-colon="true">Phone</fd-form-label>
                         </div>
 						<div ng-show="action === 'select'" style="margin: 4px 0px; padding: 0px 10px" class="fd-col  fd-col-md--4 ">
 							<a href="tel:{{entity.Phone}}" class="fd-link">{{entity.Phone}}</a>
@@ -130,7 +130,7 @@
 	                            <fd-input id="idPhone"
 	                                name="Phone"
 	                                state="{{ forms.details['Phone'].$valid ? '' : 'error' }}"
-									ng-required="true"
+									ng-required="false"
 	                                ng-model="entity.Phone"
 	                                ng-readonly="action === 'select'"
 	                                ng-minlength="0.0 || 0"

@@ -58,8 +58,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (entity.Amount) {
 				filter.$filter.equals.Amount = entity.Amount;
 			}
-			if (entity.Property3) {
-				filter.$filter.contains.Property3 = entity.Property3;
+			if (entity.IBAN) {
+				filter.$filter.contains.IBAN = entity.IBAN;
 			}
 			if (entity.Users) {
 				filter.$filter.equals.Users = entity.Users;
@@ -75,9 +75,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			}
 			if (entity.CreationDateTo) {
 				filter.$filter.lessThanOrEqual.CreationDate = entity.CreationDateTo;
-			}
-			if (entity.Property9) {
-				filter.$filter.contains.Property9 = entity.Property9;
 			}
 			if (entity.Currency) {
 				filter.$filter.equals.Currency = entity.Currency;

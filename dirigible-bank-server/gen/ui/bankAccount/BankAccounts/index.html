@@ -29,12 +29,11 @@
 				<thead fd-table-header sticky="true">
 					<tr fd-table-row>
 						<th fd-table-header-cell>Amount</th>
-						<th fd-table-header-cell>Property3</th>
+						<th fd-table-header-cell>IBAN</th>
 						<th fd-table-header-cell>Users</th>
 						<th fd-table-header-cell>BankAccountType</th>
 						<th fd-table-header-cell>BankAccountStatus</th>
 						<th fd-table-header-cell>CreationDate</th>
-						<th fd-table-header-cell>Property9</th>
 						<th fd-table-header-cell>Currency</th>
 						<th fd-table-header-cell></th>
 					</tr>
@@ -46,7 +45,7 @@
 					<tr fd-table-row hoverable="true" ng-repeat="next in data"
 						dg-selected="next.Id === selectedEntity.Id" ng-click="selectEntity(next)">
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Amount}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Property3}}</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.IBAN}}</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							{{optionsUsersValue(next.Users)}}
 						</td>
@@ -59,7 +58,6 @@
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							<fd-input type="date" ng-model="next.CreationDate" ng-readonly="true"></fd-input>
 						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Property9}}</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							{{optionsCurrencyValue(next.Currency)}}
 						</td>

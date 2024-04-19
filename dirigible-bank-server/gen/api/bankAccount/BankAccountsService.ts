@@ -122,14 +122,11 @@ class BankAccountsService {
         if (entity.Amount === null || entity.Amount === undefined) {
             throw new ValidationError(`The 'Amount' property is required, provide a valid value`);
         }
-        if (entity.Property3 === null || entity.Property3 === undefined) {
-            throw new ValidationError(`The 'Property3' property is required, provide a valid value`);
+        if (entity.IBAN === null || entity.IBAN === undefined) {
+            throw new ValidationError(`The 'IBAN' property is required, provide a valid value`);
         }
-        if (entity.Property3?.length > 20) {
-            throw new ValidationError(`The 'Property3' exceeds the maximum length of [20] characters`);
-        }
-        if (entity.Property9?.length > 255) {
-            throw new ValidationError(`The 'Property9' exceeds the maximum length of [255] characters`);
+        if (entity.IBAN?.length > 20) {
+            throw new ValidationError(`The 'IBAN' exceeds the maximum length of [20] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);

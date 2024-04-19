@@ -7,23 +7,21 @@ import { EntityUtils } from "../utils/EntityUtils";
 export interface BankAccountsEntity {
     readonly Id: number;
     Amount: number;
-    Property3: string;
+    IBAN: string;
     Users?: number;
     BankAccountType?: number;
     BankAccountStatus?: number;
     CreationDate: Date;
-    Property9: string;
     Currency?: number;
 }
 
 export interface BankAccountsCreateEntity {
     readonly Amount: number;
-    readonly Property3: string;
+    readonly IBAN: string;
     readonly Users?: number;
     readonly BankAccountType?: number;
     readonly BankAccountStatus?: number;
     readonly CreationDate: Date;
-    readonly Property9: string;
     readonly Currency?: number;
 }
 
@@ -36,78 +34,71 @@ export interface BankAccountsEntityOptions {
         equals?: {
             Id?: number | number[];
             Amount?: number | number[];
-            Property3?: string | string[];
+            IBAN?: string | string[];
             Users?: number | number[];
             BankAccountType?: number | number[];
             BankAccountStatus?: number | number[];
             CreationDate?: Date | Date[];
-            Property9?: string | string[];
             Currency?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Amount?: number | number[];
-            Property3?: string | string[];
+            IBAN?: string | string[];
             Users?: number | number[];
             BankAccountType?: number | number[];
             BankAccountStatus?: number | number[];
             CreationDate?: Date | Date[];
-            Property9?: string | string[];
             Currency?: number | number[];
         };
         contains?: {
             Id?: number;
             Amount?: number;
-            Property3?: string;
+            IBAN?: string;
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
             CreationDate?: Date;
-            Property9?: string;
             Currency?: number;
         };
         greaterThan?: {
             Id?: number;
             Amount?: number;
-            Property3?: string;
+            IBAN?: string;
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
             CreationDate?: Date;
-            Property9?: string;
             Currency?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Amount?: number;
-            Property3?: string;
+            IBAN?: string;
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
             CreationDate?: Date;
-            Property9?: string;
             Currency?: number;
         };
         lessThan?: {
             Id?: number;
             Amount?: number;
-            Property3?: string;
+            IBAN?: string;
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
             CreationDate?: Date;
-            Property9?: string;
             Currency?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Amount?: number;
-            Property3?: string;
+            IBAN?: string;
             Users?: number;
             BankAccountType?: number;
             BankAccountStatus?: number;
             CreationDate?: Date;
-            Property9?: string;
             Currency?: number;
         };
     },
@@ -148,7 +139,7 @@ export class BankAccountsRepository {
                 required: true
             },
             {
-                name: "Property3",
+                name: "IBAN",
                 column: "BANKACCOUNTS_PROPERTY3",
                 type: "VARCHAR",
                 required: true
@@ -172,12 +163,6 @@ export class BankAccountsRepository {
                 name: "CreationDate",
                 column: "BANKACCOUNTS_CREATIONDATE",
                 type: "DATE",
-                required: true
-            },
-            {
-                name: "Property9",
-                column: "BANKACCOUNTS_PROPERTY9",
-                type: "VARCHAR",
                 required: true
             },
             {

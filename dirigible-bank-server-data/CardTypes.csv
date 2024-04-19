@@ -1,4 +1,4 @@
-CARD_TYPE_ID,CARD_TYPE_Name
+CARDTYPE_ID,CARDTYPE_NAME
 1,Credit Card
 2,Debit Card
 3,Prepaid Card
