@@ -141,50 +141,6 @@
                 ]
             },
             {
-                "name": "PI_TRANSACTIONS",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "TRANSACTIONS_ID"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "name": "TRANSACTIONS_BANKACCOUNTS"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "name": "TRANSACTIONS_BANKACCOUNTS"
-                    },
-                    {
-                        "type": "DOUBLE",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "TRANSACTIONS_AMOUNT"
-                    },
-                    {
-                        "type": "DATE",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "TRANSACTIONS_PROPERTY5"
-                    }
-                ]
-            },
-            {
                 "name": "PI_CARDS",
                 "type": "TABLE",
                 "columns": [
@@ -431,6 +387,46 @@
                 ]
             },
             {
+                "name": "PI_TRANSACTIONS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "TRANSACTIONS_ID"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "TRANSACTIONS_RECIEVER"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "TRANSACTIONS_SENDER"
+                    },
+                    {
+                        "type": "DOUBLE",
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "TRANSACTIONS_AMOUNT"
+                    },
+                    {
+                        "type": "DATE",
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "TRANSACTIONS_DATE"
+                    }
+                ]
+            },
+            {
                 "name": "Users_City",
                 "type": "foreignKey",
                 "table": "PI_USERS",
@@ -485,24 +481,6 @@
                 "referencedColumns": "CURRENCY_ID"
             },
             {
-                "name": "Transactions_BankAccounts",
-                "type": "foreignKey",
-                "table": "PI_TRANSACTIONS",
-                "constraintName": "Transactions_BankAccounts",
-                "columns": "TRANSACTIONS_BANKACCOUNTS",
-                "referencedTable": "PI_BANKACCOUNTS",
-                "referencedColumns": "BANKACCOUNTS_ID"
-            },
-            {
-                "name": "Transactions_BankAccounts",
-                "type": "foreignKey",
-                "table": "PI_TRANSACTIONS",
-                "constraintName": "Transactions_BankAccounts",
-                "columns": "TRANSACTIONS_BANKACCOUNTS",
-                "referencedTable": "PI_BANKACCOUNTS",
-                "referencedColumns": "BANKACCOUNTS_ID"
-            },
-            {
                 "name": "Cards_Users",
                 "type": "foreignKey",
                 "table": "PI_CARDS",
@@ -519,6 +497,24 @@
                 "columns": "CARDS_CARDTYPE",
                 "referencedTable": "PI_CARDTYPE",
                 "referencedColumns": "CARDTYPE_ID"
+            },
+            {
+                "name": "Transactions_BankAccounts",
+                "type": "foreignKey",
+                "table": "PI_TRANSACTIONS",
+                "constraintName": "Transactions_BankAccounts",
+                "columns": "TRANSACTIONS_RECIEVER",
+                "referencedTable": "PI_BANKACCOUNTS",
+                "referencedColumns": "BANKACCOUNTS_ID"
+            },
+            {
+                "name": "Transactions_BankAccounts",
+                "type": "foreignKey",
+                "table": "PI_TRANSACTIONS",
+                "constraintName": "Transactions_BankAccounts",
+                "columns": "TRANSACTIONS_SENDER",
+                "referencedTable": "PI_BANKACCOUNTS",
+                "referencedColumns": "BANKACCOUNTS_ID"
             }
         ]
     },

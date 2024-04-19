@@ -25,8 +25,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.entity = params.entity ?? {};
 				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 				$scope.selectedMainEntityId = params.selectedMainEntityId;
-				$scope.optionsBankAccounts = params.optionsBankAccounts;
-				$scope.optionsBankAccounts = params.optionsBankAccounts;
 			}
 		}
 
@@ -53,11 +51,11 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (entity.Id) {
 				filter.$filter.equals.Id = entity.Id;
 			}
-			if (entity.BankAccounts) {
-				filter.$filter.equals.BankAccounts = entity.BankAccounts;
+			if (entity.Reciever) {
+				filter.$filter.equals.Reciever = entity.Reciever;
 			}
-			if (entity.BankAccounts) {
-				filter.$filter.equals.BankAccounts = entity.BankAccounts;
+			if (entity.Sender) {
+				filter.$filter.equals.Sender = entity.Sender;
 			}
 			if (entity.Amount) {
 				filter.$filter.equals.Amount = entity.Amount;

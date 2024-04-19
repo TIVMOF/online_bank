@@ -119,12 +119,6 @@ class TransactionsService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.BankAccounts === null || entity.BankAccounts === undefined) {
-            throw new ValidationError(`The 'BankAccounts' property is required, provide a valid value`);
-        }
-        if (entity.BankAccounts === null || entity.BankAccounts === undefined) {
-            throw new ValidationError(`The 'BankAccounts' property is required, provide a valid value`);
-        }
         if (entity.Amount === null || entity.Amount === undefined) {
             throw new ValidationError(`The 'Amount' property is required, provide a valid value`);
         }

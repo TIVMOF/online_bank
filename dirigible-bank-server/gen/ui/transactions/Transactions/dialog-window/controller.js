@@ -29,8 +29,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.entity = params.entity;
 				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 				$scope.selectedMainEntityId = params.selectedMainEntityId;
-				$scope.optionsBankAccounts = params.optionsBankAccounts;
-				$scope.optionsBankAccounts = params.optionsBankAccounts;
 			}
 		}
 

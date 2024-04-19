@@ -6,15 +6,15 @@ import { EntityUtils } from "../utils/EntityUtils";
 
 export interface TransactionsEntity {
     readonly Id: number;
-    BankAccounts: number;
-    BankAccounts: number;
+    Reciever?: number;
+    Sender?: number;
     Amount?: number;
     Date?: Date;
 }
 
 export interface TransactionsCreateEntity {
-    readonly BankAccounts: number;
-    readonly BankAccounts: number;
+    readonly Reciever?: number;
+    readonly Sender?: number;
     readonly Amount?: number;
     readonly Date?: Date;
 }
@@ -27,50 +27,50 @@ export interface TransactionsEntityOptions {
     $filter?: {
         equals?: {
             Id?: number | number[];
-            BankAccounts?: number | number[];
-            BankAccounts?: number | number[];
+            Reciever?: number | number[];
+            Sender?: number | number[];
             Amount?: number | number[];
             Date?: Date | Date[];
         };
         notEquals?: {
             Id?: number | number[];
-            BankAccounts?: number | number[];
-            BankAccounts?: number | number[];
+            Reciever?: number | number[];
+            Sender?: number | number[];
             Amount?: number | number[];
             Date?: Date | Date[];
         };
         contains?: {
             Id?: number;
-            BankAccounts?: number;
-            BankAccounts?: number;
+            Reciever?: number;
+            Sender?: number;
             Amount?: number;
             Date?: Date;
         };
         greaterThan?: {
             Id?: number;
-            BankAccounts?: number;
-            BankAccounts?: number;
+            Reciever?: number;
+            Sender?: number;
             Amount?: number;
             Date?: Date;
         };
         greaterThanOrEqual?: {
             Id?: number;
-            BankAccounts?: number;
-            BankAccounts?: number;
+            Reciever?: number;
+            Sender?: number;
             Amount?: number;
             Date?: Date;
         };
         lessThan?: {
             Id?: number;
-            BankAccounts?: number;
-            BankAccounts?: number;
+            Reciever?: number;
+            Sender?: number;
             Amount?: number;
             Date?: Date;
         };
         lessThanOrEqual?: {
             Id?: number;
-            BankAccounts?: number;
-            BankAccounts?: number;
+            Reciever?: number;
+            Sender?: number;
             Amount?: number;
             Date?: Date;
         };
@@ -106,16 +106,14 @@ export class TransactionsRepository {
                 autoIncrement: true,
             },
             {
-                name: "BankAccounts",
-                column: "TRANSACTIONS_BANKACCOUNTS",
+                name: "Reciever",
+                column: "TRANSACTIONS_RECIEVER",
                 type: "INTEGER",
-                required: true
             },
             {
-                name: "BankAccounts",
-                column: "TRANSACTIONS_BANKACCOUNTS",
+                name: "Sender",
+                column: "TRANSACTIONS_SENDER",
                 type: "INTEGER",
-                required: true
             },
             {
                 name: "Amount",
@@ -124,7 +122,7 @@ export class TransactionsRepository {
             },
             {
                 name: "Date",
-                column: "TRANSACTIONS_PROPERTY5",
+                column: "TRANSACTIONS_DATE",
                 type: "DATE",
             }
         ]

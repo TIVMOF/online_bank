@@ -108,16 +108,12 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Transactions-details", {
 				action: "select",
 				entity: entity,
-				optionsBankAccounts: $scope.optionsBankAccounts,
-				optionsBankAccounts: $scope.optionsBankAccounts,
 			});
 		};
 
 		$scope.openFilter = function (entity) {
 			messageHub.showDialogWindow("Transactions-filter", {
 				entity: $scope.filterEntity,
-				optionsBankAccounts: $scope.optionsBankAccounts,
-				optionsBankAccounts: $scope.optionsBankAccounts,
 			});
 		};
 
@@ -126,8 +122,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Transactions-details", {
 				action: "create",
 				entity: {},
-				optionsBankAccounts: $scope.optionsBankAccounts,
-				optionsBankAccounts: $scope.optionsBankAccounts,
 			}, null, false);
 		};
 
@@ -135,8 +129,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Transactions-details", {
 				action: "update",
 				entity: entity,
-				optionsBankAccounts: $scope.optionsBankAccounts,
-				optionsBankAccounts: $scope.optionsBankAccounts,
 			}, null, false);
 		};
 
@@ -168,46 +160,5 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		};
-
-		//----------------Dropdowns-----------------//
-		$scope.optionsBankAccounts = [];
-		$scope.optionsBankAccounts = [];
-
-
-		$http.get("/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts").then(function (response) {
-			$scope.optionsBankAccounts = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Id
-				}
-			});
-		});
-
-		$http.get("/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts").then(function (response) {
-			$scope.optionsBankAccounts = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Id
-				}
-			});
-		});
-
-		$scope.optionsBankAccountsValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsBankAccounts.length; i++) {
-				if ($scope.optionsBankAccounts[i].value === optionKey) {
-					return $scope.optionsBankAccounts[i].text;
-				}
-			}
-			return null;
-		};
-		$scope.optionsBankAccountsValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsBankAccounts.length; i++) {
-				if ($scope.optionsBankAccounts[i].value === optionKey) {
-					return $scope.optionsBankAccounts[i].text;
-				}
-			}
-			return null;
-		};
-		//----------------Dropdowns-----------------//
 
 	}]);
