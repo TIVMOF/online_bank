@@ -8,23 +8,24 @@
 
 ## Model
 
-![emd-image](https://github-production-user-asset-6210df.s3.amazonaws.com/80454439/259375599-399094b7-78eb-4c47-a226-47f3fefe8f61.jpg)
+<img width="742" alt="image" src="https://github.com/TIVMOF/online_bank/assets/78173711/5a03d1b3-5e48-45e6-ad65-24f28ee204f1">
+
 
 ## Application
 ## Build
 
-	docker build -t codbex-petstore .
+	docker build -t online_bank .
  
 ## PULL
 
-	docker pull ghcr.io/codbex/codbex-petstore:latest
+	docker pull ghcr.io/tivmof/online_bank:latest
 
 ## Run
 
-	docker run --name codbex-petstore -d -p 8080:8080 ghcr.io/codbex/codbex-petstore:latest
+	docker run --name online_bank -d -p 8080:8080 ghcr.io/tivmof/online_bank:latest
  
 ## Clean
 
-	docker rm codbex-petstore
+	docker rm online_bank
 
    
