@@ -7,3 +7,5 @@ COPY dirigible-bank-server target/dirigible/repository/root/registry/public/diri
 COPY dirigible-bank-server-data target/dirigible/repository/root/registry/public/dirigible-bank-server-data
 
 ENV DIRIGIBLE_HOME_URL=/services/web/dirigible-bank-server/gen/index.html
+
+EXPOSE 8080
