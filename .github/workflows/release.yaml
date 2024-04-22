@@ -1,0 +1,35 @@
+name: Release - Server
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: Release Version
+        required: true
+        default: 1.0.0
+
+run-name: 'version set to ${{ inputs.release-version }} for release'
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/application-release.yaml@main
+    with:
+      application-name: online_bank
+      release-version: ${{ inputs.release-version }}
+      release-content: |
+        ## codbex-aion - ${{ inputs.release-version }}
+  
+        Dirigible Bank Server
+  
+        ## Deployment
+  
+        ```
+        docker run --name dirigible-bank-server \
+        --rm -p 8080:8080 -p 8081:8081 \
+        ghcr.io/tivmof/dirigible-bank-server:${{ inputs.release-version }}
+        ```
+  
+        ## Access points:
+
+        - [/services/web/dirigible-bank-server/gen/](http://localhost:8080/services/web/dirigible-bank-server/gen/) - Admin Panel
+    secrets: inherit
