@@ -7,7 +7,19 @@ on:
 
 jobs:
   main:
-    uses: codbex/codbex-infra/.github/workflows/application-pull-request.yaml@main
-    with:
-      application-name: online_bank
-    secrets: inherit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Initialize Buildx
+        run: |
+          docker buildx create --name codbex-builder || true
+          docker buildx use codbex-builder
+
+      - name: Build Docker Image
+        run: |
+          docker buildx build --tag online_bank -o type=image --platform=linux/arm64,linux/amd64 .
