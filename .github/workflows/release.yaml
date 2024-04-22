@@ -12,24 +12,49 @@ run-name: 'version set to ${{ inputs.release-version }} for release'
 
 jobs:
   main:
-    uses: codbex/codbex-infra/.github/workflows/application-release.yaml@main
-    with:
-      application-name: online_bank
-      release-version: ${{ inputs.release-version }}
-      release-content: |
-        ## codbex-aion - ${{ inputs.release-version }}
-  
-        Dirigible Bank Server
-  
-        ## Deployment
-  
-        ```
-        docker run --name dirigible-bank-server \
-        --rm -p 8080:8080 -p 8081:8081 \
-        ghcr.io/tivmof/dirigible-bank-server:${{ inputs.release-version }}
-        ```
-  
-        ## Access points:
+    runs-on: ubuntu-latest
 
-        - [/services/web/dirigible-bank-server/gen/](http://localhost:8080/services/web/dirigible-bank-server/gen/) - Admin Panel
-    secrets: inherit
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: "Configure Git"
+        run: |
+          git fetch
+          git checkout master  # Checkout the branch you want to release from
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Initialize Buildx
+        run: |
+          docker buildx create --name codbex-builder || true
+          docker buildx use codbex-builder
+
+      - name: Build and Push Docker Image
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login ghcr.io -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker buildx build --tag online_bank -o type=image --platform=linux/arm64,linux/amd64 .
+          docker buildx build --push --tag ghcr.io/tivmof/online_bank:${{ inputs.release-version }} -o type=image --platform=linux/arm64,linux/amd64 .
+
+      - name: Create and Push Release Branch
+        run: |
+          git checkout -b release/${{ inputs.release-version }}
+          git push --set-upstream origin release/${{ inputs.release-version }}
+
+      - name: "Create GitHub Release"
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: v${{ inputs.release-version }}
+          name: ${{ inputs.release-version }}
+          draft: false
+          prerelease: false
+          files: |
+            LICENSE
+          body: |
+            ## Release - ${{ inputs.release-version }}
+            ${{
+              '## Release Notes\n\n' + inputs.release-content  # Combine the release content
+            }}
