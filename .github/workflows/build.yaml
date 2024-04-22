@@ -30,4 +30,4 @@ jobs:
 
       - name: Push Docker Image to GitHub Container Registry
         run: |
-          docker buildx build --push --tag ghcr.io/codbex/online_bank:latest -o type=image --platform=linux/arm64,linux/amd64 .
+          docker buildx build --push --tag ghcr.io/tivmof/online_bank:latest -o type=image --platform=linux/arm64,linux/amd64 .
