@@ -33,7 +33,6 @@
 						<th fd-table-header-cell>Email</th>
 						<th fd-table-header-cell>Password</th>
 						<th fd-table-header-cell>Phone</th>
-						<th fd-table-header-cell>City</th>
 						<th fd-table-header-cell>Country</th>
 						<th fd-table-header-cell></th>
 					</tr>
@@ -52,9 +51,6 @@
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Password}}</td>
 						<td fd-table-cell>
 							<a href="tel:{{next.Phone}}" class="fd-link">{{next.Phone}}</a>
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							{{optionsCityValue(next.City)}}
 						</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							{{optionsCountryValue(next.Country)}}

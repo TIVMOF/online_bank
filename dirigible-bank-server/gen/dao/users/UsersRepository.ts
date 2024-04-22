@@ -10,7 +10,6 @@ export interface UsersEntity {
     Email: string;
     Password: string;
     Phone: string;
-    City?: number;
     Country?: number;
 }
 
@@ -20,7 +19,6 @@ export interface UsersCreateEntity {
     readonly Email: string;
     readonly Password: string;
     readonly Phone: string;
-    readonly City?: number;
     readonly Country?: number;
 }
 
@@ -37,7 +35,6 @@ export interface UsersEntityOptions {
             Email?: string | string[];
             Password?: string | string[];
             Phone?: string | string[];
-            City?: number | number[];
             Country?: number | number[];
         };
         notEquals?: {
@@ -47,7 +44,6 @@ export interface UsersEntityOptions {
             Email?: string | string[];
             Password?: string | string[];
             Phone?: string | string[];
-            City?: number | number[];
             Country?: number | number[];
         };
         contains?: {
@@ -57,7 +53,6 @@ export interface UsersEntityOptions {
             Email?: string;
             Password?: string;
             Phone?: string;
-            City?: number;
             Country?: number;
         };
         greaterThan?: {
@@ -67,7 +62,6 @@ export interface UsersEntityOptions {
             Email?: string;
             Password?: string;
             Phone?: string;
-            City?: number;
             Country?: number;
         };
         greaterThanOrEqual?: {
@@ -77,7 +71,6 @@ export interface UsersEntityOptions {
             Email?: string;
             Password?: string;
             Phone?: string;
-            City?: number;
             Country?: number;
         };
         lessThan?: {
@@ -87,7 +80,6 @@ export interface UsersEntityOptions {
             Email?: string;
             Password?: string;
             Phone?: string;
-            City?: number;
             Country?: number;
         };
         lessThanOrEqual?: {
@@ -97,7 +89,6 @@ export interface UsersEntityOptions {
             Email?: string;
             Password?: string;
             Phone?: string;
-            City?: number;
             Country?: number;
         };
     },
@@ -160,11 +151,6 @@ export class UsersRepository {
                 column: "USERS_PHONE",
                 type: "VARCHAR",
                 required: true
-            },
-            {
-                name: "City",
-                column: "USERS_CITY",
-                type: "INTEGER",
             },
             {
                 name: "Country",

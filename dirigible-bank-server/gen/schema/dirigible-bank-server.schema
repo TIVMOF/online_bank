@@ -54,14 +54,6 @@
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
-                        "name": "USERS_CITY"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
                         "name": "USERS_COUNTRY"
                     }
                 ]
@@ -304,36 +296,6 @@
                 ]
             },
             {
-                "name": "PI_CITY",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "CITY_ID"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 100,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CITY_NAME"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CITY_COUNTRY"
-                    }
-                ]
-            },
-            {
                 "name": "PI_COUNTRY",
                 "type": "TABLE",
                 "columns": [
@@ -417,22 +379,12 @@
                     },
                     {
                         "type": "DATE",
-                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
                         "name": "TRANSACTIONS_DATE"
                     }
                 ]
-            },
-            {
-                "name": "Users_City",
-                "type": "foreignKey",
-                "table": "PI_USERS",
-                "constraintName": "Users_City",
-                "columns": "USERS_CITY",
-                "referencedTable": "PI_CITY",
-                "referencedColumns": "CITY_ID"
             },
             {
                 "name": "Users_Country",

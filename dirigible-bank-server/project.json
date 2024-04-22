@@ -12,12 +12,6 @@
             "type": "git",
             "url": "https://github.com/codbex/codbex-currencies.git",
             "branch": "main"
-        },
-        {
-            "guid": "codbex-cities",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-cities.git",
-            "branch": "main"
         }
     ],
     "actions": [
