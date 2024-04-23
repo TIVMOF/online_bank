@@ -234,114 +234,6 @@
                 ]
             },
             {
-                "name": "PI_CURRENCY",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "CURRENCY_ID"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 3,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CURRENCY_CODE"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 127,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CURRENCY_NAME"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 3,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CURRENCY_NUMERIC"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CURRENCY_ROUNDING"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CURRENCY_BASE"
-                    },
-                    {
-                        "type": "DOUBLE",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "CURRENCY_RATE"
-                    }
-                ]
-            },
-            {
-                "name": "PI_COUNTRY",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "COUNTRY_ID"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 255,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "COUNTRY_NAME"
-                    },
-                    {
-                        "type": "CHAR",
-                        "length": 2,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "COUNTRY_CODE2"
-                    },
-                    {
-                        "type": "CHAR",
-                        "length": 3,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "COUNTRY_CODE3"
-                    },
-                    {
-                        "type": "CHAR",
-                        "length": 3,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "COUNTRY_NUMERIC"
-                    }
-                ]
-            },
-            {
                 "name": "PI_TRANSACTIONS",
                 "type": "TABLE",
                 "columns": [
@@ -379,6 +271,7 @@
                     },
                     {
                         "type": "DATE",
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,

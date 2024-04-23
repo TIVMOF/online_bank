@@ -1,33 +1,27 @@
-angular.module('page', ["ideUI", "ideView", "entityApi"])
+angular.module('page', ["ideUI", "ideView"])
 	.config(["messageHubProvider", function (messageHubProvider) {
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.cards.Cards';
 	}])
-	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/cards/CardsService.ts";
-	}])
-	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
+	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', function ($scope, messageHub, ViewParameters) {
 
 		$scope.entity = {};
 		$scope.forms = {
 			details: {},
 		};
 
-		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
-			let dataParameters = window.frameElement.getAttribute("data-parameters");
-			if (dataParameters) {
-				let params = JSON.parse(dataParameters);
-				if (params?.entity?.ExpirationDateFrom) {
-					params.entity.ExpirationDateFrom = new Date(params.entity.ExpirationDateFrom);
-				}
-				if (params?.entity?.ExpirationDateTo) {
-					params.entity.ExpirationDateTo = new Date(params.entity.ExpirationDateTo);
-				}
-				$scope.entity = params.entity ?? {};
-				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
-				$scope.selectedMainEntityId = params.selectedMainEntityId;
-				$scope.optionsUsers = params.optionsUsers;
-				$scope.optionsCardType = params.optionsCardType;
+		let params = ViewParameters.get();
+		if (Object.keys(params).length) {
+			if (params?.entity?.ExpirationDateFrom) {
+				params.entity.ExpirationDateFrom = new Date(params.entity.ExpirationDateFrom);
 			}
+			if (params?.entity?.ExpirationDateTo) {
+				params.entity.ExpirationDateTo = new Date(params.entity.ExpirationDateTo);
+			}
+			$scope.entity = params.entity ?? {};
+			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
+			$scope.selectedMainEntityId = params.selectedMainEntityId;
+			$scope.optionsUsers = params.optionsUsers;
+			$scope.optionsCardType = params.optionsCardType;
 		}
 
 		$scope.filter = function () {

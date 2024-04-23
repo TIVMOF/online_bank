@@ -87,7 +87,7 @@ export class CardTypeRepository {
 
     private readonly dao;
 
-    constructor(dataSource?: string) {
+    constructor(dataSource = "DefaultDB") {
         this.dao = daoApi.create(CardTypeRepository.DEFINITION, null, dataSource);
     }
 
@@ -184,6 +184,6 @@ export class CardTypeRepository {
                 console.error(error);
             }            
         });
-        producer.topic("dirigible-bank-server/entities/CardType").send(JSON.stringify(data));
+        producer.topic("dirigible-bank-server-entities-CardType").send(JSON.stringify(data));
     }
 }

@@ -25,17 +25,16 @@
 		        </fd-button>
             </div>
 
-            <fd-fieldset class="fd-margin--md" ng-form="forms.details">
+            <fd-fieldset ng-form="forms.details">
                 <fd-form-group dg-header="Transactions Filter" name="entityForm" class="fd-container fd-form-layout-grid-container">
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idReciever" dg-required="false" dg-colon="true">Reciever</fd-form-label>
+                        	<fd-form-label for="idReciever" dg-colon="true">Reciever</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
 	                        <fd-combobox-input id="idReciever"
 	                            name="Reciever"
 	                            state="{{ forms.details['Reciever'].$valid ? '' : 'error' }}"
-	                            ng-required="false"
 	                            ng-model="entity.Reciever"
 	                            dropdown-items="optionsReciever"
 	                            dg-placeholder="Search Reciever ...">
@@ -44,13 +43,12 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idSender" dg-required="false" dg-colon="true">Sender</fd-form-label>
+                        	<fd-form-label for="idSender" dg-colon="true">Sender</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
 	                        <fd-combobox-input id="idSender"
 	                            name="Sender"
 	                            state="{{ forms.details['Sender'].$valid ? '' : 'error' }}"
-	                            ng-required="false"
 	                            ng-model="entity.Sender"
 	                            dropdown-items="optionsSender"
 	                            dg-placeholder="Search Sender ...">
@@ -59,14 +57,13 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idAmount" dg-required="true" dg-colon="true">Amount</fd-form-label>
+                        	<fd-form-label for="idAmount" dg-colon="true">Amount</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Amount'].$valid }}">
 	                            <fd-input id="idAmount"
 	                                name="Amount"
 	                                state="{{ forms.details['Amount'].$valid ? '' : 'error' }}"
-									ng-required="true"
 	                                ng-model="entity.Amount"
 	                                ng-minlength="${property.minLength} || 0"
 	                                ng-maxlength="${property.maxLength} || -1"
@@ -79,14 +76,13 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idDate" dg-required="false" dg-colon="true">Date</fd-form-label>
+                        	<fd-form-label for="idDate" dg-colon="true">Date</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Date'].$valid }}">
 	                            <fd-input id="idDate"
 	                                name="Date"
 	                                state="{{ forms.details['Date'].$valid ? '' : 'error' }}"
-									ng-required="false"
 	                                ng-model="entity.Date"
 	                                ng-minlength="${property.minLength} || 0"
 	                                ng-maxlength="${property.maxLength} || -1"
@@ -101,20 +97,19 @@
             </fd-fieldset>
         </fd-scrollbar>
 
-        <footer class="fd-dialog__footer fd-bar fd-bar--footer" ng-show="action !== 'select'">
-            <div class="fd-bar__right">
-                <fd-button class="fd-margin-end--tiny fd-dialog__decisive-button" compact="true" dg-type="emphasized"
-                    dg-label="Filter"
-                    ng-click="filter()">
-                </fd-button>
-                <fd-button class="fd-margin-end--tiny fd-dialog__decisive-button" compact="true" dg-type="transparent"
-                    dg-label="Reset"
-                    ng-click="resetFilter()">
-                </fd-button>
-                <fd-button class="fd-dialog__decisive-button" compact="true" dg-type="transparent" dg-label="Cancel"
-                    ng-click="cancel()"></fd-button>
-            </div>
-        </footer>
+		<fd-bar bar-design="footer" compact="true" ng-show="action !== 'select'">
+			<fd-bar-right>
+				<fd-bar-element>
+					<fd-button dg-label="Filter" dg-type="emphasized" ng-click="filter()"></fd-button>
+				</fd-bar-element>
+				<fd-bar-element>
+					<fd-button dg-label="Reset" dg-type="transparent" ng-click="resetFilter()"></fd-button>
+				</fd-bar-element>
+				<fd-bar-element>
+					<fd-button dg-label="Cancel" dg-type="transparent" ng-click="cancel()"></fd-button>
+				</fd-bar-element>
+			</fd-bar-right>
+		</fd-bar>
 
     </body>
 

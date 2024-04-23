@@ -1,35 +1,29 @@
-angular.module('page', ["ideUI", "ideView", "entityApi"])
+angular.module('page', ["ideUI", "ideView"])
 	.config(["messageHubProvider", function (messageHubProvider) {
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.bankAccount.BankAccounts';
 	}])
-	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts";
-	}])
-	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
+	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', function ($scope, messageHub, ViewParameters) {
 
 		$scope.entity = {};
 		$scope.forms = {
 			details: {},
 		};
 
-		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
-			let dataParameters = window.frameElement.getAttribute("data-parameters");
-			if (dataParameters) {
-				let params = JSON.parse(dataParameters);
-				if (params?.entity?.CreationDateFrom) {
-					params.entity.CreationDateFrom = new Date(params.entity.CreationDateFrom);
-				}
-				if (params?.entity?.CreationDateTo) {
-					params.entity.CreationDateTo = new Date(params.entity.CreationDateTo);
-				}
-				$scope.entity = params.entity ?? {};
-				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
-				$scope.selectedMainEntityId = params.selectedMainEntityId;
-				$scope.optionsUsers = params.optionsUsers;
-				$scope.optionsBankAccountType = params.optionsBankAccountType;
-				$scope.optionsBankAccountStatus = params.optionsBankAccountStatus;
-				$scope.optionsCurrency = params.optionsCurrency;
+		let params = ViewParameters.get();
+		if (Object.keys(params).length) {
+			if (params?.entity?.CreationDateFrom) {
+				params.entity.CreationDateFrom = new Date(params.entity.CreationDateFrom);
 			}
+			if (params?.entity?.CreationDateTo) {
+				params.entity.CreationDateTo = new Date(params.entity.CreationDateTo);
+			}
+			$scope.entity = params.entity ?? {};
+			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
+			$scope.selectedMainEntityId = params.selectedMainEntityId;
+			$scope.optionsUsers = params.optionsUsers;
+			$scope.optionsBankAccountType = params.optionsBankAccountType;
+			$scope.optionsBankAccountStatus = params.optionsBankAccountStatus;
+			$scope.optionsCurrency = params.optionsCurrency;
 		}
 
 		$scope.filter = function () {

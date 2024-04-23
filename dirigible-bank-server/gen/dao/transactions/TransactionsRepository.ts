@@ -130,7 +130,7 @@ export class TransactionsRepository {
 
     private readonly dao;
 
-    constructor(dataSource?: string) {
+    constructor(dataSource = "DefaultDB") {
         this.dao = daoApi.create(TransactionsRepository.DEFINITION, null, dataSource);
     }
 
@@ -233,6 +233,6 @@ export class TransactionsRepository {
                 console.error(error);
             }            
         });
-        producer.topic("dirigible-bank-server/transactions/Transactions").send(JSON.stringify(data));
+        producer.topic("dirigible-bank-server-transactions-Transactions").send(JSON.stringify(data));
     }
 }
