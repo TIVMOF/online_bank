@@ -32,6 +32,39 @@
       "delimEnclosing": "\"",
       "distinguishEmptyFromNull": true,
       "version": "1.0"
+    },
+    {
+      "table": "PI_BANKACCOUNTS",
+      "schema": "PUBLIC",
+      "file": "/dirigible-bank-server-data/BankAccounts.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
+      "table": "PI_USERS",
+      "schema": "PUBLIC",
+      "file": "/dirigible-bank-server-data/Users.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
+      "table": "PI_CARDS",
+      "schema": "PUBLIC",
+      "file": "/dirigible-bank-server-data/Cards.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
     }
   ]
 }

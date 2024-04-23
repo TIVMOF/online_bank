@@ -65,7 +65,7 @@
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataAutoIncrement": "false",
-                        "dataLength": "255",
+                        "dataLength": "700",
                         "dataName": "USERS_EMAIL",
                         "dataNullable": "false",
                         "dataPrecision": "NaN",

@@ -134,8 +134,8 @@ class UsersService {
         if (entity.Email === null || entity.Email === undefined) {
             throw new ValidationError(`The 'Email' property is required, provide a valid value`);
         }
-        if (entity.Email?.length > 255) {
-            throw new ValidationError(`The 'Email' exceeds the maximum length of [255] characters`);
+        if (entity.Email?.length > 700) {
+            throw new ValidationError(`The 'Email' exceeds the maximum length of [700] characters`);
         }
         if (entity.Password === null || entity.Password === undefined) {
             throw new ValidationError(`The 'Password' property is required, provide a valid value`);

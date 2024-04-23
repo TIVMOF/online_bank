@@ -1,7 +1,7 @@
 {
   "tablePrefix": "PI_",
   "brand": "Proper Invest Bank",
-  "brandUrl": "https://github.com/TIVMOF/online_bank.git",
+  "brandUrl": "https://github.com/TIVMOF/online_bank",
   "title": "PI Smart Server",
   "description": "Server",
   "projectName": "dirigible-bank-server",
@@ -169,7 +169,7 @@
           "calculatedPropertyExpressionCreate": "",
           "calculatedPropertyExpressionUpdate": "",
           "dataAutoIncrement": false,
-          "dataLength": "255",
+          "dataLength": "700",
           "dataName": "USERS_EMAIL",
           "dataNullable": false,
           "dataPrecision": "NaN",

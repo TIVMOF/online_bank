@@ -29,7 +29,7 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 255,
+                        "length": 700,
                         "precision": "NaN",
                         "scale": "NaN",
                         "name": "USERS_EMAIL"
