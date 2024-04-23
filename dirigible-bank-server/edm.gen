@@ -3,7 +3,7 @@
   "brand": "Proper Invest Bank",
   "brandUrl": "https://github.com/TIVMOF/online_bank",
   "title": "PI Smart Server",
-  "description": "The server for online banking app - PI Smart",
+  "description": "The Server for online banking app - PI Smart",
   "projectName": "dirigible-bank-server",
   "workspaceName": "workspace",
   "filePath": "edm.model",

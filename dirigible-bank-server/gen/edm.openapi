@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: PI Smart Server - OpenAPI 3.0
   version: 1.0.0
-  description: The server for online banking app - PI Smart
+  description: The Server for online banking app - PI Smart
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io
