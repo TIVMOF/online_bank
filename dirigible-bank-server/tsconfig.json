@@ -3,17 +3,13 @@
         "module": "ESNext",
         "target": "ES6",
         "moduleResolution": "Node",
-        "baseUrl": "../",
         "lib": [
             "ESNext",
             "DOM"
         ],
         "paths": {
             "sdk/*": [
-                "./modules/src/*"
-            ],
-            "/*": [
-                "./*"
+                "../modules/src/*"
             ]
         },
         "types": [

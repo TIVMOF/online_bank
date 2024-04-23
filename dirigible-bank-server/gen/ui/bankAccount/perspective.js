@@ -4,11 +4,11 @@
  * Do not modify the content as it may be re-generated again.
  */
 const perspectiveData = {
-	id: 'bankAccount',
-	name: 'Bank Accounts',
-	link: '/services/web/dirigible-bank-server/gen/ui/bankAccount/index.html',
-	order: 60,
-	icon: '/services/web/resources/unicons/chart-line.svg',
+	id: "bankAccount",
+	name: "bankAccount",
+	link: "/services/web/dirigible-bank-server/gen/ui/bankAccount/index.html",
+	order: "60",
+	icon: "/services/web/resources/unicons/chart-line.svg",
 };
 
 if (typeof exports !== 'undefined') {

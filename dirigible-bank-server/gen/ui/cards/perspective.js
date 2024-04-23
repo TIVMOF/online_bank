@@ -4,11 +4,11 @@
  * Do not modify the content as it may be re-generated again.
  */
 const perspectiveData = {
-	id: 'cards',
-	name: 'Cards',
-	link: '/services/web/dirigible-bank-server/gen/ui/cards/index.html',
-	order: 80,
-	icon: '/services/web/resources/unicons/credit-card.svg',
+	id: "cards",
+	name: "cards",
+	link: "/services/web/dirigible-bank-server/gen/ui/cards/index.html",
+	order: "80",
+	icon: "/services/web/resources/unicons/credit-card.svg",
 };
 
 if (typeof exports !== 'undefined') {

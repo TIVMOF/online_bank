@@ -5,7 +5,7 @@
  */
 exports.getTile = function () {
     return {
-        group: "Cards",
+        group: "cards",
         name: "Cards",
         caption: "Manage entity Cards",
         tooltip: "Cards",

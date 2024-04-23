@@ -162,7 +162,7 @@ export class UsersRepository {
 
     private readonly dao;
 
-    constructor(dataSource = "DefaultDB") {
+    constructor(dataSource?: string) {
         this.dao = daoApi.create(UsersRepository.DEFINITION, null, dataSource);
     }
 
@@ -259,6 +259,6 @@ export class UsersRepository {
                 console.error(error);
             }            
         });
-        producer.topic("dirigible-bank-server-users-Users").send(JSON.stringify(data));
+        producer.topic("dirigible-bank-server/users/Users").send(JSON.stringify(data));
     }
 }

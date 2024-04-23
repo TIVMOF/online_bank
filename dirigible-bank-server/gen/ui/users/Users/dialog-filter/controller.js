@@ -1,20 +1,26 @@
-angular.module('page', ["ideUI", "ideView"])
+angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.users.Users';
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', function ($scope, messageHub, ViewParameters) {
+	.config(["entityApiProvider", function (entityApiProvider) {
+		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts";
+	}])
+	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
 			details: {},
 		};
 
-		let params = ViewParameters.get();
-		if (Object.keys(params).length) {
-			$scope.entity = params.entity ?? {};
-			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
-			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsCountry = params.optionsCountry;
+		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
+			let dataParameters = window.frameElement.getAttribute("data-parameters");
+			if (dataParameters) {
+				let params = JSON.parse(dataParameters);
+				$scope.entity = params.entity ?? {};
+				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
+				$scope.selectedMainEntityId = params.selectedMainEntityId;
+				$scope.optionsCountry = params.optionsCountry;
+			}
 		}
 
 		$scope.filter = function () {

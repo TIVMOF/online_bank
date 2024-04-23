@@ -88,7 +88,7 @@ export class BankAccountStatusRepository {
 
     private readonly dao;
 
-    constructor(dataSource = "DefaultDB") {
+    constructor(dataSource?: string) {
         this.dao = daoApi.create(BankAccountStatusRepository.DEFINITION, null, dataSource);
     }
 
@@ -185,6 +185,6 @@ export class BankAccountStatusRepository {
                 console.error(error);
             }            
         });
-        producer.topic("dirigible-bank-server-entities-BankAccountStatus").send(JSON.stringify(data));
+        producer.topic("dirigible-bank-server/entities/BankAccountStatus").send(JSON.stringify(data));
     }
 }

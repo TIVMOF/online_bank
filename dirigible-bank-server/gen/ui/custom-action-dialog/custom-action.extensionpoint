@@ -1,0 +1,4 @@
+{
+    "name": "dirigible-bank-server-custom-action",
+    "description": "dirigible-bank-server - Extension Point for the Application Custom Action Providers"
+}

@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/cards/CardsService.ts";
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', 'entityApi', function ($scope, messageHub, ViewParameters, entityApi) {
+	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
@@ -18,17 +18,20 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		};
 		$scope.action = 'select';
 
-		let params = ViewParameters.get();
-		if (Object.keys(params).length) {
-			$scope.action = params.action;
-			if (params.entity.ExpirationDate) {
-				params.entity.ExpirationDate = new Date(params.entity.ExpirationDate);
+		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
+			let dataParameters = window.frameElement.getAttribute("data-parameters");
+			if (dataParameters) {
+				let params = JSON.parse(dataParameters);
+				$scope.action = params.action;
+				if (params.entity.ExpirationDate) {
+					params.entity.ExpirationDate = new Date(params.entity.ExpirationDate);
+				}
+				$scope.entity = params.entity;
+				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
+				$scope.selectedMainEntityId = params.selectedMainEntityId;
+				$scope.optionsUsers = params.optionsUsers;
+				$scope.optionsCardType = params.optionsCardType;
 			}
-			$scope.entity = params.entity;
-			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
-			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsUsers = params.optionsUsers;
-			$scope.optionsCardType = params.optionsCardType;
 		}
 
 		$scope.create = function () {

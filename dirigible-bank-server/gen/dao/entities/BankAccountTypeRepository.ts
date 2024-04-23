@@ -88,7 +88,7 @@ export class BankAccountTypeRepository {
 
     private readonly dao;
 
-    constructor(dataSource = "DefaultDB") {
+    constructor(dataSource?: string) {
         this.dao = daoApi.create(BankAccountTypeRepository.DEFINITION, null, dataSource);
     }
 
@@ -185,6 +185,6 @@ export class BankAccountTypeRepository {
                 console.error(error);
             }            
         });
-        producer.topic("dirigible-bank-server-entities-BankAccountType").send(JSON.stringify(data));
+        producer.topic("dirigible-bank-server/entities/BankAccountType").send(JSON.stringify(data));
     }
 }

@@ -144,14 +144,14 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Users_Country",
                         "relationshipEntityName": "Country",
-                        "relationshipEntityPerspectiveName": "Countries",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "Countries"
                     }
                 ],
                 "caption": "Manage entity Users",
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}USERS\"",
                 "dataName": "USERS",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "feedPassword": "YWRtaW4=",
                 "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
@@ -162,7 +162,6 @@
                 "name": "Users",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/user-circle.svg",
-                "perspectiveLabel": "Users",
                 "perspectiveName": "users",
                 "perspectiveOrder": "40",
                 "perspectiveRole": "",
@@ -253,8 +252,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "BankAccounts_Users",
                         "relationshipEntityName": "Users",
-                        "relationshipEntityPerspectiveName": "users",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "users"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -279,8 +277,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "BankAccounts_BankAccountType",
                         "relationshipEntityName": "BankAccountType",
-                        "relationshipEntityPerspectiveName": "entities",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "entities"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -305,8 +302,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "BankAccounts_BankAccountStatus",
                         "relationshipEntityName": "BankAccountStatus",
-                        "relationshipEntityPerspectiveName": "entities",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "entities"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -351,14 +347,14 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "BankAccounts_Currency",
                         "relationshipEntityName": "Currency",
-                        "relationshipEntityPerspectiveName": "Currencies",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "Currencies"
                     }
                 ],
                 "caption": "Manage entity BankAccounts",
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}BANKACCOUNTS\"",
                 "dataName": "BANKACCOUNTS",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "feedPassword": "YWRtaW4=",
                 "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
@@ -369,7 +365,6 @@
                 "name": "BankAccounts",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/chart-line.svg",
-                "perspectiveLabel": "Bank Accounts",
                 "perspectiveName": "bankAccount",
                 "perspectiveOrder": "60",
                 "perspectiveRole": "",
@@ -420,8 +415,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Cards_Users",
                         "relationshipEntityName": "Users",
-                        "relationshipEntityPerspectiveName": "users",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "users"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -486,14 +480,14 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Cards_CardType",
                         "relationshipEntityName": "CardType",
-                        "relationshipEntityPerspectiveName": "entities",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "entities"
                     }
                 ],
                 "caption": "Manage entity Cards",
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}CARDS\"",
                 "dataName": "CARDS",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "feedPassword": "YWRtaW4=",
                 "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
@@ -504,7 +498,6 @@
                 "name": "Cards",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/credit-card.svg",
-                "perspectiveLabel": "Cards",
                 "perspectiveName": "cards",
                 "perspectiveOrder": "80",
                 "perspectiveRole": "",
@@ -557,6 +550,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}BANKACCOUNTTYPE\"",
                 "dataName": "BANKACCOUNTTYPE",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -565,7 +559,6 @@
                 "name": "BankAccountType",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
                 "perspectiveName": "entities",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",
@@ -618,6 +611,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}BANKACCOUNTSTATUS\"",
                 "dataName": "BANKACCOUNTSTATUS",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -626,7 +620,6 @@
                 "name": "BankAccountStatus",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
                 "perspectiveName": "entities",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",
@@ -679,6 +672,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}CARDTYPE\"",
                 "dataName": "CARDTYPE",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -687,7 +681,6 @@
                 "name": "CardType",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
                 "perspectiveName": "entities",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",
@@ -840,6 +833,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}CURRENCY\"",
                 "dataName": "CURRENCY",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -848,7 +842,6 @@
                 "name": "Currency",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/dollar-alt.svg",
-                "perspectiveLabel": "Entities",
                 "perspectiveName": "Currencies",
                 "perspectiveOrder": "990",
                 "perspectiveRole": "",
@@ -963,6 +956,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}COUNTRY\"",
                 "dataName": "COUNTRY",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -971,7 +965,6 @@
                 "name": "Country",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/globe.svg",
-                "perspectiveLabel": "Entities",
                 "perspectiveName": "Countries",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",
@@ -1024,8 +1017,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Transactions_BankAccounts",
                         "relationshipEntityName": "BankAccounts",
-                        "relationshipEntityPerspectiveName": "bankAccount",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "bankAccount"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -1050,8 +1042,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Transactions_BankAccounts",
                         "relationshipEntityName": "BankAccounts",
-                        "relationshipEntityPerspectiveName": "bankAccount",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveName": "bankAccount"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -1098,6 +1089,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}TRANSACTIONS\"",
                 "dataName": "TRANSACTIONS",
                 "dataQuery": "",
+                "disableGeneration": "false",
                 "feedPassword": "YWRtaW4=",
                 "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
@@ -1108,7 +1100,6 @@
                 "name": "Transactions",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/bill.svg",
-                "perspectiveLabel": "Transactions",
                 "perspectiveName": "transactions",
                 "perspectiveOrder": "90",
                 "perspectiveRole": "",

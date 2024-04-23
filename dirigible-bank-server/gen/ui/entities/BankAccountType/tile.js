@@ -5,7 +5,7 @@
  */
 exports.getTile = function () {
     return {
-        group: "Entities",
+        group: "entities",
         name: "BankAccountType",
         caption: "Manage entity BankAccountType",
         tooltip: "BankAccountType",

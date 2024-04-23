@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts";
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', 'entityApi', function ($scope, messageHub, ViewParameters, entityApi) {
+	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
@@ -18,19 +18,22 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		};
 		$scope.action = 'select';
 
-		let params = ViewParameters.get();
-		if (Object.keys(params).length) {
-			$scope.action = params.action;
-			if (params.entity.CreationDate) {
-				params.entity.CreationDate = new Date(params.entity.CreationDate);
+		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
+			let dataParameters = window.frameElement.getAttribute("data-parameters");
+			if (dataParameters) {
+				let params = JSON.parse(dataParameters);
+				$scope.action = params.action;
+				if (params.entity.CreationDate) {
+					params.entity.CreationDate = new Date(params.entity.CreationDate);
+				}
+				$scope.entity = params.entity;
+				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
+				$scope.selectedMainEntityId = params.selectedMainEntityId;
+				$scope.optionsUsers = params.optionsUsers;
+				$scope.optionsBankAccountType = params.optionsBankAccountType;
+				$scope.optionsBankAccountStatus = params.optionsBankAccountStatus;
+				$scope.optionsCurrency = params.optionsCurrency;
 			}
-			$scope.entity = params.entity;
-			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
-			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsUsers = params.optionsUsers;
-			$scope.optionsBankAccountType = params.optionsBankAccountType;
-			$scope.optionsBankAccountStatus = params.optionsBankAccountStatus;
-			$scope.optionsCurrency = params.optionsCurrency;
 		}
 
 		$scope.create = function () {

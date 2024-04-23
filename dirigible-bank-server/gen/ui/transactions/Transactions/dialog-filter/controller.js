@@ -1,27 +1,33 @@
-angular.module('page', ["ideUI", "ideView"])
+angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.transactions.Transactions';
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', function ($scope, messageHub, ViewParameters) {
+	.config(["entityApiProvider", function (entityApiProvider) {
+		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/transactions/TransactionsService.ts";
+	}])
+	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
 			details: {},
 		};
 
-		let params = ViewParameters.get();
-		if (Object.keys(params).length) {
-			if (params?.entity?.DateFrom) {
-				params.entity.DateFrom = new Date(params.entity.DateFrom);
+		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
+			let dataParameters = window.frameElement.getAttribute("data-parameters");
+			if (dataParameters) {
+				let params = JSON.parse(dataParameters);
+				if (params?.entity?.DateFrom) {
+					params.entity.DateFrom = new Date(params.entity.DateFrom);
+				}
+				if (params?.entity?.DateTo) {
+					params.entity.DateTo = new Date(params.entity.DateTo);
+				}
+				$scope.entity = params.entity ?? {};
+				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
+				$scope.selectedMainEntityId = params.selectedMainEntityId;
+				$scope.optionsReciever = params.optionsReciever;
+				$scope.optionsSender = params.optionsSender;
 			}
-			if (params?.entity?.DateTo) {
-				params.entity.DateTo = new Date(params.entity.DateTo);
-			}
-			$scope.entity = params.entity ?? {};
-			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
-			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsReciever = params.optionsReciever;
-			$scope.optionsSender = params.optionsSender;
 		}
 
 		$scope.filter = function () {
