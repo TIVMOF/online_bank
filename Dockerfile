@@ -8,6 +8,6 @@ COPY dirigible-bank-server-data target/dirigible/repository/root/registry/public
 
 ENV DIRIGIBLE_HOME_URL=/services/web/dirigible-bank-server/gen/index.html
 
-ENV DIRIGIBLE_SINGLE_TENANT_MODE_ENABLED: true
+ENV DIRIGIBLE_SINGLE_TENANT_MODE_ENABLED=true
 
 EXPOSE 8080
