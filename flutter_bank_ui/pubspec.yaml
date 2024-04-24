@@ -33,6 +33,8 @@ dependencies:
   smooth_page_indicator:
   syncfusion_flutter_charts: ^25.1.41+1
   readmore: ^3.0.0
+  http: ^1.2.1
+  shared_preferences: ^2.2.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
