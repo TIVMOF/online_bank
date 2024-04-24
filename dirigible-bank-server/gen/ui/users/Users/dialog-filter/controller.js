@@ -64,6 +64,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (entity.Country) {
 				filter.$filter.equals.Country = entity.Country;
 			}
+			if (entity.Username) {
+				filter.$filter.contains.Username = entity.Username;
+			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
 				filter: filter

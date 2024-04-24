@@ -145,6 +145,26 @@
                         "relationshipName": "Users_Country",
                         "relationshipEntityName": "Country",
                         "relationshipEntityPerspectiveName": "Countries"
+                    },
+                    {
+                        "calculatedPropertyExpressionCreate": "",
+                        "calculatedPropertyExpressionUpdate": "",
+                        "dataAutoIncrement": "false",
+                        "dataLength": "900",
+                        "dataName": "USERS_USERNAME",
+                        "dataNullable": "false",
+                        "dataPrecision": "NaN",
+                        "dataPrimaryKey": "false",
+                        "dataScale": "NaN",
+                        "dataType": "VARCHAR",
+                        "dataUnique": "true",
+                        "isCalculatedProperty": "false",
+                        "isRequiredProperty": "true",
+                        "name": "Username",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetSize": "",
+                        "widgetType": "TEXTBOX"
                     }
                 ],
                 "caption": "Manage entity Users",

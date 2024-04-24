@@ -11,6 +11,7 @@ export interface UsersEntity {
     Password: string;
     Phone: string;
     Country?: number;
+    Username: string;
 }
 
 export interface UsersCreateEntity {
@@ -20,6 +21,7 @@ export interface UsersCreateEntity {
     readonly Password: string;
     readonly Phone: string;
     readonly Country?: number;
+    readonly Username: string;
 }
 
 export interface UsersUpdateEntity extends UsersCreateEntity {
@@ -36,6 +38,7 @@ export interface UsersEntityOptions {
             Password?: string | string[];
             Phone?: string | string[];
             Country?: number | number[];
+            Username?: string | string[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -45,6 +48,7 @@ export interface UsersEntityOptions {
             Password?: string | string[];
             Phone?: string | string[];
             Country?: number | number[];
+            Username?: string | string[];
         };
         contains?: {
             Id?: number;
@@ -54,6 +58,7 @@ export interface UsersEntityOptions {
             Password?: string;
             Phone?: string;
             Country?: number;
+            Username?: string;
         };
         greaterThan?: {
             Id?: number;
@@ -63,6 +68,7 @@ export interface UsersEntityOptions {
             Password?: string;
             Phone?: string;
             Country?: number;
+            Username?: string;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -72,6 +78,7 @@ export interface UsersEntityOptions {
             Password?: string;
             Phone?: string;
             Country?: number;
+            Username?: string;
         };
         lessThan?: {
             Id?: number;
@@ -81,6 +88,7 @@ export interface UsersEntityOptions {
             Password?: string;
             Phone?: string;
             Country?: number;
+            Username?: string;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -90,6 +98,7 @@ export interface UsersEntityOptions {
             Password?: string;
             Phone?: string;
             Country?: number;
+            Username?: string;
         };
     },
     $select?: (keyof UsersEntity)[],
@@ -156,6 +165,12 @@ export class UsersRepository {
                 name: "Country",
                 column: "USERS_COUNTRY",
                 type: "INTEGER",
+            },
+            {
+                name: "Username",
+                column: "USERS_USERNAME",
+                type: "VARCHAR",
+                required: true
             }
         ]
     };

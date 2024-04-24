@@ -55,6 +55,13 @@
                         "scale": "NaN",
                         "nullable": true,
                         "name": "USERS_COUNTRY"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 900,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "name": "USERS_USERNAME"
                     }
                 ]
             },

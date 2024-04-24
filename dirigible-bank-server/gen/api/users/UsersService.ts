@@ -146,6 +146,12 @@ class UsersService {
         if (entity.Phone?.length > 20) {
             throw new ValidationError(`The 'Phone' exceeds the maximum length of [20] characters`);
         }
+        if (entity.Username === null || entity.Username === undefined) {
+            throw new ValidationError(`The 'Username' property is required, provide a valid value`);
+        }
+        if (entity.Username?.length > 900) {
+            throw new ValidationError(`The 'Username' exceeds the maximum length of [900] characters`);
+        }
         for (const next of validationModules) {
             next.validate(entity);
         }

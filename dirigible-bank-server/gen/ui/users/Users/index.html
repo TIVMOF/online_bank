@@ -34,6 +34,7 @@
 						<th fd-table-header-cell>Password</th>
 						<th fd-table-header-cell>Phone</th>
 						<th fd-table-header-cell>Country</th>
+						<th fd-table-header-cell>Username</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -55,6 +56,7 @@
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							{{optionsCountryValue(next.Country)}}
 						</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Username}}</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>
