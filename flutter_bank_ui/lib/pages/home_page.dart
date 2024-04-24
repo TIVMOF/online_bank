@@ -1,18 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'pay_page.dart';
 import 'statistics_page.dart';
 import 'transaction_page.dart';
 import '../utill/app_bar.dart';
 import '../utill/bottom_app_bar.dart';
-import '../utill/my_button.dart';
 import '../utill/my_card.dart';
 import '../utill/my_list_tile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:online_bank/pages/send_page.dart';
-
-import 'bills_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,46 +81,19 @@ class _HomePageState extends State<HomePage> {
 
             SizedBox(height: 20),
 
-            // 3 buttons ->send + pay + bills
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // send button
-                  MyButton(
-                    iconImagePath: 'lib/icons/send.png',
-                    buttonText: 'Прати',
-                    page: SendPage(context: context),
-                    is_paying: false,
-                  ),
-
-                  //pay button
-                  MyButton(
-                    iconImagePath: 'lib/icons/credit-card.png',
-                    buttonText: 'Плати',
-                    page: PayPage(context: context),
-                    is_paying: true,
-                  ),
-
-                  //bills button
-                  MyButton(
-                    iconImagePath: 'lib/icons/bill.png',
-                    buttonText: 'Сметки',
-                    page: BillsPage(context: context),
-                    is_paying: false,
-                  ),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 20),
-
             // column -> stats + transaction
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: Column(
                 children: [
+                  //Send
+                  MyListTile(
+                    iconImagePath: 'lib/icons/send.png',
+                    tileTitle: 'Преводи',
+                    tileSubtitle: 'Прати по сметка',
+                    page: SendPage(context: context),
+                  ),
+
                   //Stats
                   MyListTile(
                     iconImagePath: 'lib/icons/statistics.png',
