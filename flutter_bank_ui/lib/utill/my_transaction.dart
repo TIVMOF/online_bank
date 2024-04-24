@@ -12,7 +12,7 @@ class MyTransaction extends StatelessWidget {
     required this.date,
     required this.sum,
     required this.sentOrReceived,
-    });
+  });
 
   final backgroundSent = Color.fromARGB(255, 189, 201, 226);
   final textSent = 'Към:';
@@ -32,75 +32,85 @@ class MyTransaction extends StatelessWidget {
         height: 80,
         padding: EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
         decoration: BoxDecoration(
-          color: sentOrReceived? backgroundReceived: backgroundSent,
-          borderRadius: BorderRadius.circular(5),
-          boxShadow: [
-            BoxShadow(
-              color: Color.fromARGB(193, 158, 158, 158).withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 10,
-              offset: Offset(4, 8),
-            )
-          ]
-        ),
+            color: sentOrReceived ? backgroundReceived : backgroundSent,
+            borderRadius: BorderRadius.circular(5),
+            boxShadow: [
+              BoxShadow(
+                color: Color.fromARGB(193, 158, 158, 158).withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 10,
+                offset: Offset(4, 8),
+              )
+            ]),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    sentOrReceived? textReceived: textSent,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      sentOrReceived ? textReceived : textSent,
+                      overflow: TextOverflow.ellipsis,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                  ),
-                  SizedBox(width: 10,),
-                  Text(
-                    recipient,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                    SizedBox(
+                      width: 10,
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Прехвърлени:',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade800,
+                    Text(
+                      recipient,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 5,),
-                  Text(
-                    date,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade700,
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Прехвърлени:',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade800,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Text(
-            (sentOrReceived? plus: minus) + ' ' + sum.toStringAsFixed(2) + 'лв',
-            style: TextStyle(
-              fontSize: 18,
-              color: sentOrReceived? colorReceived: colorSent,
-              fontWeight: FontWeight.bold,
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      date,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ),
-        ],),
+            Text(
+              (sentOrReceived ? plus : minus) +
+                  ' ' +
+                  sum.toStringAsFixed(2) +
+                  'лв',
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 18,
+                color: sentOrReceived ? colorReceived : colorSent,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
