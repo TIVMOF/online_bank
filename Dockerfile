@@ -5,6 +5,7 @@ FROM dirigiblelabs/dirigible:latest
 
 COPY dirigible-bank-server target/dirigible/repository/root/registry/public/dirigible-bank-server
 COPY dirigible-bank-server-data target/dirigible/repository/root/registry/public/dirigible-bank-server-data
+COPY dirigible-bank-server-api target/dirigible/repository/root/registry/public/dirigible-bank-server-api
 
 ENV DIRIGIBLE_HOME_URL=/services/web/dirigible-bank-server/gen/index.html
 
