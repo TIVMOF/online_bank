@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
 import "package:flutter/material.dart";
 import '../utill/app_bar.dart';
 import '../utill/bottom_app_bar.dart';
@@ -6,9 +6,13 @@ import '../utill/read_more.dart';
 
 class AboutPage extends StatefulWidget {
   final BuildContext context;
+  final String fullName;
+  final int userId;
 
   AboutPage({
     required this.context,
+    required this.fullName,
+    required this.userId,
   });
 
   @override
@@ -20,7 +24,8 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: AppBarBottom(context: context),
+      bottomNavigationBar: AppBarBottom(
+          context: context, fullName: widget.fullName, userId: widget.userId),
       resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: SingleChildScrollView(

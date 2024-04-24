@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'home_page.dart'; // Adjust if needed
-// import '../utill/session_manager.dart'; // Import your session management class
+import 'home_page.dart';
+import 'dart:developer';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
     // Example backend authentication
     final response = await http.post(
       Uri.parse(
-          'http://113.30.151.151:8080/services/ts/dirigible-bank-server-api/user.ts/login'), // Adjust endpoint
+          'http://113.30.151.151:8080/services/js/dirigible-bank-server-api/user.js/login'), // Adjust endpoint
       headers: {'Content-Type': 'application/json', 'Authorization': basicAuth},
       body: json.encode({
         'Username': username,
@@ -39,24 +39,20 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     if (response.statusCode == 200) {
-      // Parse the session data from the response
-      // var sessionData = jsonDecode(response.body);
+      final sessionData = jsonDecode(response.body);
 
-      // Store the session data
-      // await SessionManager.setSessionId(
-      //     sessionData['sessionId']); // Store session ID
-      // await SessionManager.setUserId(sessionData['userId']); // Store user ID
-
+      final fullName = "${sessionData['FName']} ${sessionData['LName']}";
       // Navigate to the Home Page
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) =>
-              HomePage(), // Corrected extra positional argument
+          builder: (context) => HomePage(
+              fullName: fullName,
+              userId: sessionData['Id']), // Corrected extra positional argument
         ),
       );
     } else {
-      print(response.statusCode);
+      log('data: $response.statusCode');
       // Login failed
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Login failed. Please try again.")),
