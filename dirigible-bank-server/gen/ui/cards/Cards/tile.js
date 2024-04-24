@@ -12,6 +12,6 @@ exports.getTile = function () {
         // icon: "file-o",
         location: "/services/web/dirigible-bank-server/gen/ui/cards/index.html",
         order: "100",
-        groupOrder: "80",
+        groupOrder: "80"
     };
 };

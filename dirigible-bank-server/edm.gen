@@ -1,7 +1,7 @@
 {
-  "tablePrefix": "PI_",
-  "brand": "Proper Invas Bank",
-  "brandUrl": "https://github.com/TIVMOF/online_bank",
+  "tablePrefix": "PI",
+  "brand": "Proper Invest Bank",
+  "brandUrl": "https://github.com/TIVMOF/online_bank.git",
   "title": "PI Smart Server",
   "description": "Server",
   "projectName": "dirigible-bank-server",
@@ -16,8 +16,7 @@
       "name": "users",
       "label": "users",
       "order": "40",
-      "icon": "/services/web/resources/unicons/user-circle.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/user-circle.svg"
     },
     "bankAccount": {
       "views": [
@@ -26,8 +25,7 @@
       "name": "bankAccount",
       "label": "bankAccount",
       "order": "60",
-      "icon": "/services/web/resources/unicons/chart-line.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/chart-line.svg"
     },
     "cards": {
       "views": [
@@ -36,8 +34,7 @@
       "name": "cards",
       "label": "cards",
       "order": "80",
-      "icon": "/services/web/resources/unicons/credit-card.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/credit-card.svg"
     },
     "entities": {
       "views": [
@@ -48,8 +45,7 @@
       "name": "entities",
       "label": "entities",
       "order": "100",
-      "icon": "/services/web/resources/unicons/copy.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/copy.svg"
     },
     "Currencies": {
       "views": [
@@ -58,8 +54,7 @@
       "name": "Currencies",
       "label": "Currencies",
       "order": "990",
-      "icon": "/services/web/resources/unicons/dollar-alt.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/dollar-alt.svg"
     },
     "Countries": {
       "views": [
@@ -68,8 +63,7 @@
       "name": "Countries",
       "label": "Countries",
       "order": "100",
-      "icon": "/services/web/resources/unicons/globe.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/globe.svg"
     },
     "transactions": {
       "views": [
@@ -78,8 +72,7 @@
       "name": "transactions",
       "label": "transactions",
       "order": "90",
-      "icon": "/services/web/resources/unicons/bill.svg",
-      "role": ""
+      "icon": "/services/web/resources/unicons/bill.svg"
     }
   },
   "models": [
@@ -96,7 +89,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -104,9 +97,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -122,7 +112,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "FName",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -130,9 +120,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "FName",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -150,7 +137,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "LName",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -158,9 +145,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "LName",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -178,7 +162,7 @@
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Email",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -186,9 +170,6 @@
           "widgetType": "EMAIL",
           "dataNotNull": true,
           "widgetLabel": "Email",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -206,7 +187,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Password",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -214,9 +195,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "Password",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -234,7 +212,7 @@
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Phone",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -242,9 +220,6 @@
           "widgetType": "TEL",
           "dataNotNull": true,
           "widgetLabel": "Phone",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -262,7 +237,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Country",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "Name",
@@ -275,9 +250,6 @@
           "relationshipEntityPerspectiveName": "Countries",
           "dataNotNull": false,
           "widgetLabel": "Country",
-          "widgetDropdownUrl": "\"/services/ts/codbex-countries/gen/api/Countries/CountryService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -293,7 +265,7 @@
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Username",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -301,16 +273,13 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "Username",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity Users",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_USERS\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PIUSERS\"",
       "dataName": "USERS",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -330,12 +299,6 @@
       "title": "Users",
       "tooltip": "Users",
       "type": "PRIMARY",
-      "referencedProjections": [
-        {
-          "name": "Country",
-          "project": "codbex-countries"
-        }
-      ],
       "primaryKeys": [
         "Id"
       ],
@@ -355,7 +318,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -363,9 +326,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -381,7 +341,7 @@
           "dataType": "DOUBLE",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Amount",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -389,9 +349,6 @@
           "widgetType": "NUMBER",
           "dataNotNull": true,
           "widgetLabel": "Amount",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "double",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -407,7 +364,7 @@
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "IBAN",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -415,9 +372,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "IBAN",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -435,7 +389,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Users",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "FName",
@@ -448,9 +402,6 @@
           "relationshipEntityPerspectiveName": "users",
           "dataNotNull": false,
           "widgetLabel": "Users",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -466,7 +417,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "BankAccountType",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "Name",
@@ -479,9 +430,6 @@
           "relationshipEntityPerspectiveName": "entities",
           "dataNotNull": false,
           "widgetLabel": "BankAccountType",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/entities/BankAccountTypeService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -497,7 +445,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "BankAccountStatus",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "Name",
@@ -510,9 +458,6 @@
           "relationshipEntityPerspectiveName": "entities",
           "dataNotNull": false,
           "widgetLabel": "BankAccountStatus",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/entities/BankAccountStatusService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -528,7 +473,7 @@
           "dataType": "DATE",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "CreationDate",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -536,9 +481,6 @@
           "widgetType": "DATE",
           "dataNotNull": true,
           "widgetLabel": "CreationDate",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "date",
-          "dataTypeTypescript": "Date",
           "isDateType": true,
           "inputRule": ""
         },
@@ -555,7 +497,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Currency",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "Name",
@@ -568,14 +510,11 @@
           "relationshipEntityPerspectiveName": "Currencies",
           "dataNotNull": false,
           "widgetLabel": "Currency",
-          "widgetDropdownUrl": "\"/services/ts/codbex-currencies/gen/api/Currencies/CurrencyService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         }
       ],
       "caption": "Manage entity BankAccounts",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_BANKACCOUNTS\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PIBANKACCOUNTS\"",
       "dataName": "BANKACCOUNTS",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -595,12 +534,6 @@
       "title": "BankAccounts",
       "tooltip": "BankAccounts",
       "type": "PRIMARY",
-      "referencedProjections": [
-        {
-          "name": "Currency",
-          "project": "codbex-currencies"
-        }
-      ],
       "primaryKeys": [
         "Id"
       ],
@@ -621,7 +554,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -629,9 +562,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -647,7 +577,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Users",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "FName",
@@ -660,9 +590,6 @@
           "relationshipEntityPerspectiveName": "users",
           "dataNotNull": false,
           "widgetLabel": "Users",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -678,7 +605,7 @@
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "CardNumber",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -686,9 +613,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "CardNumber",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -706,7 +630,7 @@
           "dataType": "DATE",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "ExpirationDate",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -714,9 +638,6 @@
           "widgetType": "DATE",
           "dataNotNull": false,
           "widgetLabel": "ExpirationDate",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "date",
-          "dataTypeTypescript": "Date",
           "isDateType": true,
           "inputRule": ""
         },
@@ -733,7 +654,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "CardType",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "Name",
@@ -746,14 +667,11 @@
           "relationshipEntityPerspectiveName": "entities",
           "dataNotNull": true,
           "widgetLabel": "CardType",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/entities/CardTypeService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         }
       ],
       "caption": "Manage entity Cards",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_CARDS\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PICARDS\"",
       "dataName": "CARDS",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -773,7 +691,6 @@
       "title": "Cards",
       "tooltip": "Cards",
       "type": "PRIMARY",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -794,7 +711,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -802,9 +719,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -820,7 +734,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Name",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -828,16 +742,13 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity BankAccountType",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_BANKACCOUNTTYPE\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PIBANKACCOUNTTYPE\"",
       "dataName": "BANKACCOUNTTYPE",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -855,7 +766,6 @@
       "title": "BankAccountType",
       "tooltip": "BankAccountType",
       "type": "PRIMARY",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -874,7 +784,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -882,9 +792,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -900,7 +807,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Name",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -908,16 +815,13 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": true,
           "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity BankAccountStatus",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_BANKACCOUNTSTATUS\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PIBANKACCOUNTSTATUS\"",
       "dataName": "BANKACCOUNTSTATUS",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -935,7 +839,6 @@
       "title": "BankAccountStatus",
       "tooltip": "BankAccountStatus",
       "type": "PRIMARY",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -954,7 +857,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -962,9 +865,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -980,7 +880,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Name",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -988,16 +888,13 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity CardType",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_CARDTYPE\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PICARDTYPE\"",
       "dataName": "CARDTYPE",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -1015,7 +912,6 @@
       "title": "CardType",
       "tooltip": "CardType",
       "type": "PRIMARY",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -1034,7 +930,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1042,9 +938,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1060,7 +953,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Code",
           "widgetIsMajor": true,
           "widgetLength": "3",
@@ -1068,9 +961,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Code",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 3,
           "inputRule": ""
@@ -1088,7 +978,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Name",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1096,9 +986,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -1116,7 +1003,7 @@
           "dataType": "VARCHAR",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Numeric",
           "widgetIsMajor": true,
           "widgetLength": "3",
@@ -1124,9 +1011,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Numeric",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 3,
           "inputRule": ""
@@ -1144,7 +1028,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Rounding",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1152,9 +1036,6 @@
           "widgetType": "NUMBER",
           "dataNotNull": false,
           "widgetLabel": "Rounding",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1170,7 +1051,7 @@
           "dataType": "BOOLEAN",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Base",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1178,9 +1059,6 @@
           "widgetType": "CHECKBOX",
           "dataNotNull": false,
           "widgetLabel": "Base",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "boolean",
-          "dataTypeTypescript": "boolean",
           "inputRule": ""
         },
         {
@@ -1196,7 +1074,7 @@
           "dataType": "DOUBLE",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Rate",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1204,14 +1082,11 @@
           "widgetType": "NUMBER",
           "dataNotNull": false,
           "widgetLabel": "Rate",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "double",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         }
       ],
       "caption": "Manage entity Currency",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_CURRENCY\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PICURRENCY\"",
       "dataName": "CURRENCY",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -1231,7 +1106,6 @@
       "title": "Currency",
       "tooltip": "Currency",
       "type": "PROJECTION",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -1250,7 +1124,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1258,9 +1132,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1276,7 +1147,7 @@
           "dataType": "VARCHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Name",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1284,9 +1155,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -1304,7 +1172,7 @@
           "dataType": "CHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Code2",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1312,9 +1180,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Code2",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 2,
           "inputRule": ""
@@ -1332,7 +1197,7 @@
           "dataType": "CHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Code3",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1340,9 +1205,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Code3",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 3,
           "inputRule": ""
@@ -1360,7 +1222,7 @@
           "dataType": "CHAR",
           "dataUnique": true,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Numeric",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1368,16 +1230,13 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Numeric",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 3,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity Country",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_COUNTRY\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PICOUNTRY\"",
       "dataName": "COUNTRY",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -1397,7 +1256,6 @@
       "title": "Country",
       "tooltip": "Country",
       "type": "PROJECTION",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -1416,7 +1274,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Id",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1424,9 +1282,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1442,7 +1297,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Reciever",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "IBAN",
@@ -1455,9 +1310,6 @@
           "relationshipEntityPerspectiveName": "bankAccount",
           "dataNotNull": false,
           "widgetLabel": "Reciever",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1473,7 +1325,7 @@
           "dataType": "INTEGER",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Sender",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "IBAN",
@@ -1486,9 +1338,6 @@
           "relationshipEntityPerspectiveName": "bankAccount",
           "dataNotNull": false,
           "widgetLabel": "Sender",
-          "widgetDropdownUrl": "\"/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts\"",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1504,7 +1353,7 @@
           "dataType": "DOUBLE",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": true,
+          "isRequiredProperty": "true",
           "name": "Amount",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1512,9 +1361,6 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Amount",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "double",
-          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -1530,7 +1376,7 @@
           "dataType": "DATE",
           "dataUnique": false,
           "isCalculatedProperty": false,
-          "isRequiredProperty": false,
+          "isRequiredProperty": "false",
           "name": "Date",
           "widgetIsMajor": true,
           "widgetLength": "20",
@@ -1538,15 +1384,12 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Date",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "date",
-          "dataTypeTypescript": "Date",
           "isDateType": true,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity Transactions",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PI_TRANSACTIONS\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"PITRANSACTIONS\"",
       "dataName": "TRANSACTIONS",
       "dataQuery": "",
       "disableGeneration": "false",
@@ -1566,7 +1409,6 @@
       "title": "Transactions",
       "tooltip": "Transactions",
       "type": "PRIMARY",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],

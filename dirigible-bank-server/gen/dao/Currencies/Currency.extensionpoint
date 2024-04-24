@@ -1,4 +1,1 @@
-{
-    "name": "dirigible-bank-server-Currencies-Currency",
-    "description": "Extension Point for the dirigible-bank-server-Currencies-Currency entity"
-}
+{"location":"dirigible-bank-server/gen/dao/Currencies/Currency.extensionpoint","name":"dirigible-bank-server/Currencies/Currency","description":"Extension Point for dirigible-bank-server Currencies Currency"}

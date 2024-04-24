@@ -1,4 +1,4 @@
 {
-    "name": "dirigible-bank-server-perspective",
+    "name": "dirigible-bank-server",
     "description": "dirigible-bank-server - Extension Point for the Application Perspective Providers"
 }

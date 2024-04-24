@@ -7,7 +7,7 @@ const viewData = {
     id: "BankAccounts-details",
     label: "BankAccounts",
     link: "/services/web/dirigible-bank-server/gen/ui/bankAccount/BankAccounts/dialog-window/index.html",
-    perspectiveName: "bankAccount",
+    perspectiveName: "bankAccount"
 };
 
 if (typeof exports !== 'undefined') {

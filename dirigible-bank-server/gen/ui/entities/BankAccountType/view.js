@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "center",
     link: "/services/web/dirigible-bank-server/gen/ui/entities/BankAccountType/index.html",
-    perspectiveName: "entities",
+    perspectiveName: "entities"
 };
 
 if (typeof exports !== 'undefined') {

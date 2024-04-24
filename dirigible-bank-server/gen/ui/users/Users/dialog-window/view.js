@@ -7,7 +7,7 @@ const viewData = {
     id: "Users-details",
     label: "Users",
     link: "/services/web/dirigible-bank-server/gen/ui/users/Users/dialog-window/index.html",
-    perspectiveName: "users",
+    perspectiveName: "users"
 };
 
 if (typeof exports !== 'undefined') {

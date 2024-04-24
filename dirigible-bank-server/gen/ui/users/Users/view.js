@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "center",
     link: "/services/web/dirigible-bank-server/gen/ui/users/Users/index.html",
-    perspectiveName: "users",
+    perspectiveName: "users"
 };
 
 if (typeof exports !== 'undefined') {

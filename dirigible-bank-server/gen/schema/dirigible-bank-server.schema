@@ -476,6 +476,5 @@
                 "referencedColumns": "BANKACCOUNTS_ID"
             }
         ]
-    },
-    "datasource": "DefaultDB"
+    }
 }

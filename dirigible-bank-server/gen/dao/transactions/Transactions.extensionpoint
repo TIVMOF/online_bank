@@ -1,4 +1,1 @@
-{
-    "name": "dirigible-bank-server-transactions-Transactions",
-    "description": "Extension Point for the dirigible-bank-server-transactions-Transactions entity"
-}
+{"location":"dirigible-bank-server/gen/dao/transactions/Transactions.extensionpoint","name":"dirigible-bank-server/transactions/Transactions","description":"Extension Point for dirigible-bank-server transactions Transactions"}

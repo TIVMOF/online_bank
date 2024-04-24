@@ -1,4 +1,1 @@
-{
-    "name": "dirigible-bank-server-bankAccount-BankAccounts",
-    "description": "Extension Point for the dirigible-bank-server-bankAccount-BankAccounts entity"
-}
+{"location":"dirigible-bank-server/gen/dao/bankAccount/BankAccounts.extensionpoint","name":"dirigible-bank-server/bankAccount/BankAccounts","description":"Extension Point for dirigible-bank-server bankAccount BankAccounts"}

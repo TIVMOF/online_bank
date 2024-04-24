@@ -1,4 +1,1 @@
-{
-    "name": "dirigible-bank-server-cards-Cards",
-    "description": "Extension Point for the dirigible-bank-server-cards-Cards entity"
-}
+{"location":"dirigible-bank-server/gen/dao/cards/Cards.extensionpoint","name":"dirigible-bank-server/cards/Cards","description":"Extension Point for dirigible-bank-server cards Cards"}

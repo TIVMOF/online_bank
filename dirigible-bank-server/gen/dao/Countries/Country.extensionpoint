@@ -1,4 +1,1 @@
-{
-    "name": "dirigible-bank-server-Countries-Country",
-    "description": "Extension Point for the dirigible-bank-server-Countries-Country entity"
-}
+{"location":"dirigible-bank-server/gen/dao/Countries/Country.extensionpoint","name":"dirigible-bank-server/Countries/Country","description":"Extension Point for dirigible-bank-server Countries Country"}

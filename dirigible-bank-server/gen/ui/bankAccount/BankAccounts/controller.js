@@ -3,7 +3,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.bankAccount.BankAccounts';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/bankAccount/BankAccountsService.ts";
+		entityApiProvider.baseUrl = "/services/js/dirigible-bank-server/gen/api/bankAccount/BankAccounts.js";
 	}])
 	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', function ($scope, $http, messageHub, entityApi) {
 
@@ -45,27 +45,17 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//-----------------Events-------------------//
 		messageHub.onDidReceiveMessage("entityCreated", function (msg) {
-			$scope.loadPage($scope.dataPage, $scope.filter);
+			$scope.loadPage($scope.dataPage);
 		});
 
 		messageHub.onDidReceiveMessage("entityUpdated", function (msg) {
-			$scope.loadPage($scope.dataPage, $scope.filter);
-		});
-
-		messageHub.onDidReceiveMessage("entitySearch", function (msg) {
-			resetPagination();
-			$scope.filter = msg.data.filter;
-			$scope.filterEntity = msg.data.entity;
-			$scope.loadPage($scope.dataPage, $scope.filter);
+			$scope.loadPage($scope.dataPage);
 		});
 		//-----------------Events-------------------//
 
-		$scope.loadPage = function (pageNumber, filter) {
-			if (!filter && $scope.filter) {
-				filter = $scope.filter;
-			}
+		$scope.loadPage = function (pageNumber) {
 			$scope.dataPage = pageNumber;
-			entityApi.count(filter).then(function (response) {
+			entityApi.count().then(function (response) {
 				if (response.status != 200) {
 					messageHub.showAlertError("BankAccounts", `Unable to count BankAccounts: '${response.message}'`);
 					return;
@@ -73,17 +63,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.dataCount = response.data;
 				let offset = (pageNumber - 1) * $scope.dataLimit;
 				let limit = $scope.dataLimit;
-				let request;
-				if (filter) {
-					filter.$offset = offset;
-					filter.$limit = limit;
-					request = entityApi.search(filter);
-				} else {
-					request = entityApi.list(offset, limit);
-				}
-				request.then(function (response) {
+				entityApi.list(offset, limit).then(function (response) {
 					if (response.status != 200) {
-						messageHub.showAlertError("BankAccounts", `Unable to list/filter BankAccounts: '${response.message}'`);
+						messageHub.showAlertError("BankAccounts", `Unable to list BankAccounts: '${response.message}'`);
 						return;
 					}
 
@@ -97,7 +79,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				});
 			});
 		};
-		$scope.loadPage($scope.dataPage, $scope.filter);
+		$scope.loadPage($scope.dataPage);
 
 		$scope.selectEntity = function (entity) {
 			$scope.selectedEntity = entity;
@@ -108,16 +90,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("BankAccounts-details", {
 				action: "select",
 				entity: entity,
-				optionsUsers: $scope.optionsUsers,
-				optionsBankAccountType: $scope.optionsBankAccountType,
-				optionsBankAccountStatus: $scope.optionsBankAccountStatus,
-				optionsCurrency: $scope.optionsCurrency,
-			});
-		};
-
-		$scope.openFilter = function (entity) {
-			messageHub.showDialogWindow("BankAccounts-filter", {
-				entity: $scope.filterEntity,
 				optionsUsers: $scope.optionsUsers,
 				optionsBankAccountType: $scope.optionsBankAccountType,
 				optionsBankAccountStatus: $scope.optionsBankAccountStatus,
@@ -170,7 +142,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 							messageHub.showAlertError("BankAccounts", `Unable to delete BankAccounts: '${response.message}'`);
 							return;
 						}
-						$scope.loadPage($scope.dataPage, $scope.filter);
+						$scope.loadPage($scope.dataPage);
 						messageHub.postMessage("clearDetails");
 					});
 				}
@@ -183,8 +155,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.optionsBankAccountStatus = [];
 		$scope.optionsCurrency = [];
 
-
-		$http.get("/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts").then(function (response) {
+		$http.get("/services/js/dirigible-bank-server/gen/api/users/Users.js").then(function (response) {
 			$scope.optionsUsers = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -193,7 +164,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/dirigible-bank-server/gen/api/entities/BankAccountTypeService.ts").then(function (response) {
+		$http.get("/services/js/dirigible-bank-server/gen/api/entities/BankAccountType.js").then(function (response) {
 			$scope.optionsBankAccountType = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -202,7 +173,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/dirigible-bank-server/gen/api/entities/BankAccountStatusService.ts").then(function (response) {
+		$http.get("/services/js/dirigible-bank-server/gen/api/entities/BankAccountStatus.js").then(function (response) {
 			$scope.optionsBankAccountStatus = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -211,7 +182,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-currencies/gen/api/Currencies/CurrencyService.ts").then(function (response) {
+		$http.get("/services/js/dirigible-bank-server/gen/api/Currencies/Currency.js").then(function (response) {
 			$scope.optionsCurrency = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -219,7 +190,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		});
-
 		$scope.optionsUsersValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsUsers.length; i++) {
 				if ($scope.optionsUsers[i].value === optionKey) {

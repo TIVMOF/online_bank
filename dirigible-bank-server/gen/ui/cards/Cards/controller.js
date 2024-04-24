@@ -3,7 +3,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.cards.Cards';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/cards/CardsService.ts";
+		entityApiProvider.baseUrl = "/services/js/dirigible-bank-server/gen/api/cards/Cards.js";
 	}])
 	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', function ($scope, $http, messageHub, entityApi) {
 
@@ -45,27 +45,17 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//-----------------Events-------------------//
 		messageHub.onDidReceiveMessage("entityCreated", function (msg) {
-			$scope.loadPage($scope.dataPage, $scope.filter);
+			$scope.loadPage($scope.dataPage);
 		});
 
 		messageHub.onDidReceiveMessage("entityUpdated", function (msg) {
-			$scope.loadPage($scope.dataPage, $scope.filter);
-		});
-
-		messageHub.onDidReceiveMessage("entitySearch", function (msg) {
-			resetPagination();
-			$scope.filter = msg.data.filter;
-			$scope.filterEntity = msg.data.entity;
-			$scope.loadPage($scope.dataPage, $scope.filter);
+			$scope.loadPage($scope.dataPage);
 		});
 		//-----------------Events-------------------//
 
-		$scope.loadPage = function (pageNumber, filter) {
-			if (!filter && $scope.filter) {
-				filter = $scope.filter;
-			}
+		$scope.loadPage = function (pageNumber) {
 			$scope.dataPage = pageNumber;
-			entityApi.count(filter).then(function (response) {
+			entityApi.count().then(function (response) {
 				if (response.status != 200) {
 					messageHub.showAlertError("Cards", `Unable to count Cards: '${response.message}'`);
 					return;
@@ -73,17 +63,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.dataCount = response.data;
 				let offset = (pageNumber - 1) * $scope.dataLimit;
 				let limit = $scope.dataLimit;
-				let request;
-				if (filter) {
-					filter.$offset = offset;
-					filter.$limit = limit;
-					request = entityApi.search(filter);
-				} else {
-					request = entityApi.list(offset, limit);
-				}
-				request.then(function (response) {
+				entityApi.list(offset, limit).then(function (response) {
 					if (response.status != 200) {
-						messageHub.showAlertError("Cards", `Unable to list/filter Cards: '${response.message}'`);
+						messageHub.showAlertError("Cards", `Unable to list Cards: '${response.message}'`);
 						return;
 					}
 
@@ -97,7 +79,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				});
 			});
 		};
-		$scope.loadPage($scope.dataPage, $scope.filter);
+		$scope.loadPage($scope.dataPage);
 
 		$scope.selectEntity = function (entity) {
 			$scope.selectedEntity = entity;
@@ -108,14 +90,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Cards-details", {
 				action: "select",
 				entity: entity,
-				optionsUsers: $scope.optionsUsers,
-				optionsCardType: $scope.optionsCardType,
-			});
-		};
-
-		$scope.openFilter = function (entity) {
-			messageHub.showDialogWindow("Cards-filter", {
-				entity: $scope.filterEntity,
 				optionsUsers: $scope.optionsUsers,
 				optionsCardType: $scope.optionsCardType,
 			});
@@ -162,7 +136,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 							messageHub.showAlertError("Cards", `Unable to delete Cards: '${response.message}'`);
 							return;
 						}
-						$scope.loadPage($scope.dataPage, $scope.filter);
+						$scope.loadPage($scope.dataPage);
 						messageHub.postMessage("clearDetails");
 					});
 				}
@@ -173,8 +147,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.optionsUsers = [];
 		$scope.optionsCardType = [];
 
-
-		$http.get("/services/ts/dirigible-bank-server/gen/api/users/UsersService.ts").then(function (response) {
+		$http.get("/services/js/dirigible-bank-server/gen/api/users/Users.js").then(function (response) {
 			$scope.optionsUsers = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -183,7 +156,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/dirigible-bank-server/gen/api/entities/CardTypeService.ts").then(function (response) {
+		$http.get("/services/js/dirigible-bank-server/gen/api/entities/CardType.js").then(function (response) {
 			$scope.optionsCardType = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -191,7 +164,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		});
-
 		$scope.optionsUsersValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsUsers.length; i++) {
 				if ($scope.optionsUsers[i].value === optionKey) {

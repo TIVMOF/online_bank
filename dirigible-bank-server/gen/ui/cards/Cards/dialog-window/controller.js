@@ -3,19 +3,17 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHubProvider.eventIdPrefix = 'dirigible-bank-server.cards.Cards';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/dirigible-bank-server/gen/api/cards/CardsService.ts";
+		entityApiProvider.baseUrl = "/services/js/dirigible-bank-server/gen/api/cards/Cards.js";
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
 
 		$scope.entity = {};
-		$scope.forms = {
-			details: {},
-		};
 		$scope.formHeaders = {
 			select: "Cards Details",
 			create: "Create Cards",
 			update: "Update Cards"
 		};
+		$scope.formErrors = {};
 		$scope.action = 'select';
 
 		if (window != null && window.frameElement != null && window.frameElement.hasAttribute("data-parameters")) {
@@ -23,6 +21,12 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (dataParameters) {
 				let params = JSON.parse(dataParameters);
 				$scope.action = params.action;
+				if ($scope.action == "create") {
+					$scope.formErrors = {
+						CardNumber: true,
+						CardType: true,
+					};
+				}
 				if (params.entity.ExpirationDate) {
 					params.entity.ExpirationDate = new Date(params.entity.ExpirationDate);
 				}
@@ -33,6 +37,17 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.optionsCardType = params.optionsCardType;
 			}
 		}
+
+		$scope.isValid = function (isValid, property) {
+			$scope.formErrors[property] = !isValid ? true : undefined;
+			for (let next in $scope.formErrors) {
+				if ($scope.formErrors[next] === true) {
+					$scope.isFormValid = false;
+					return;
+				}
+			}
+			$scope.isFormValid = true;
+		};
 
 		$scope.create = function () {
 			let entity = $scope.entity;
