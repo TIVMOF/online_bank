@@ -86,7 +86,7 @@ rs.service({
         ],
     },
     "getTransactionsByUser": {
-        "get": [{
+        "post": [{
             "serve": (_ctx, request, response) => {
                 const body = request.getJSON();
 
