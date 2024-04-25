@@ -1,6 +1,7 @@
 import { rs } from "@dirigible/http"
 const transactionDao = require("dirigible-bank-server/gen/dao/transactions/Transactions.js");
 const bankAccountDao = require("dirigible-bank-server/gen/dao/bankAccount/BankAccounts.js");
+const userDao = require("dirigible-bank-server/gen/dao/users/Users.js");
 
 const dateRegex = '/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/'
 
@@ -83,5 +84,42 @@ rs.service({
                 }
             },
         ],
+    },
+    "getTransactionsByUser": {
+        "get": [{
+            "serve": (_ctx, request, response) => {
+                const body = request.getJSON();
+
+                if (!('Id' in body)) {
+                    response.setStatus(400);
+                    response.println("Required more parameters");
+                    return;
+                }
+
+                if (!userDao.get(body.Id)) {
+                    response.setStatus(404);
+                    response.println("Cannot find user!");
+                    return;
+                }
+
+                const allTransactions = transactionDao.list();
+
+                const userTransactions = [];
+
+                allTransactions.forEach(transaction => {
+                    if (transaction.Reciever == body.Id || transaction.Sender == body.Id) {
+                        userTransactions.push(transaction);
+                    }
+                })
+
+                response.setStatus(200);
+                response.setContentType("application/json");
+                response.println(JSON.stringify(userTransactions));
+            },
+
+            "catch": (_ctx, err, _request, response) => {
+                response.println(err);
+            }
+        }]
     }
 }).execute();
