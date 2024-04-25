@@ -4,7 +4,7 @@ const bankAccountDao = require("dirigible-bank-server/gen/dao/bankAccount/BankAc
 
 rs.service({
     "getAccountByUser": {
-        "get": [
+        "post": [
             {
                 "serve": (_ctx, request, response) => {
                     const body = request.getJSON();
