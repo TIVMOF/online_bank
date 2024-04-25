@@ -1,6 +1,5 @@
 import { rs } from "@dirigible/http"
 const userDao = require("dirigible-bank-server/gen/dao/users/Users.js");
-// import { session } from "sdk/http";
 
 rs.service({
     "login": {
@@ -51,7 +50,6 @@ rs.service({
                 },
 
                 "catch": (_ctx, err, _request, response) => {
-                    response.println("Pesho");
                     response.println(err);
                 }
             },
