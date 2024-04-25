@@ -112,6 +112,14 @@ rs.service({
                     }
                 })
 
+                userTransactions.forEach(transaction => {
+                    const sender = userDao.get(transaction.Sender);
+                    const reciever = userDao.get(transaction.Reciever);
+
+                    transaction.Sender = sender.FName + " " + sender.LName;
+                    transaction.Reciever = reciever.FName + " " + reciever.LName;
+                })
+
                 response.setStatus(200);
                 response.setContentType("application/json");
                 response.println(JSON.stringify(userTransactions));
