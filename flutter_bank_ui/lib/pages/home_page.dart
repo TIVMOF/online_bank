@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
-
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, unused_import
 import 'package:flutter/material.dart';
+import 'package:online_bank/pages/sender_page.dart';
 import 'statistics_page.dart';
 import 'transaction_page.dart';
 import '../utill/app_bar.dart';
@@ -8,10 +8,12 @@ import '../utill/bottom_app_bar.dart';
 import '../utill/my_card.dart';
 import '../utill/my_list_tile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:online_bank/pages/send_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final String fullName;
+  final int userId;
+
+  const HomePage({required this.fullName, super.key, required this.userId});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,7 +26,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: AppBarBottom(context: context),
+      bottomNavigationBar: AppBarBottom(
+          context: context, fullName: widget.fullName, userId: widget.userId),
       body: SafeArea(
         child: Column(
           children: [
@@ -91,7 +94,8 @@ class _HomePageState extends State<HomePage> {
                     iconImagePath: 'lib/icons/send.png',
                     tileTitle: 'Преводи',
                     tileSubtitle: 'Прати по сметка',
-                    page: SendPage(context: context),
+                    page: SenderPage(
+                        fullName: widget.fullName, userId: widget.userId),
                   ),
 
                   //Stats
@@ -99,7 +103,8 @@ class _HomePageState extends State<HomePage> {
                     iconImagePath: 'lib/icons/statistics.png',
                     tileTitle: 'Статистики',
                     tileSubtitle: 'Разплащания',
-                    page: StatsPage(),
+                    page: StatsPage(
+                        fullName: widget.fullName, userId: widget.userId),
                   ),
 
                   //Transactions
@@ -107,7 +112,8 @@ class _HomePageState extends State<HomePage> {
                     iconImagePath: 'lib/icons/lending.png',
                     tileTitle: 'Трансакции',
                     tileSubtitle: 'История',
-                    page: TransactionPage(),
+                    page: TransactionPage(
+                        fullName: widget.fullName, userId: widget.userId),
                   )
                 ],
               ),

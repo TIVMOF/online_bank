@@ -1,3 +1,4 @@
+// ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import '../utill/my_transaction.dart';
 import '../utill/read_more.dart';
@@ -6,7 +7,10 @@ import '../utill/app_bar.dart';
 import '../utill/bottom_app_bar.dart';
 
 class TransactionPage extends StatefulWidget {
-  const TransactionPage({super.key});
+  final String fullName;
+  final int userId;
+  const TransactionPage(
+      {super.key, required this.fullName, required this.userId});
 
   @override
   State<TransactionPage> createState() => _TransactionPageState();
@@ -19,7 +23,8 @@ class _TransactionPageState extends State<TransactionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: AppBarBottom(context: context),
+      bottomNavigationBar: AppBarBottom(
+          context: context, fullName: widget.fullName, userId: widget.userId),
       body: SafeArea(
           child: Column(
         children: [
