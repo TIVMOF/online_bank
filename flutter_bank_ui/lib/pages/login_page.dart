@@ -27,7 +27,6 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
-    // Example backend authentication
     final response = await http.post(
       Uri.parse(
           'http://113.30.151.151:8080/services/js/dirigible-bank-server-api/user.js/login'), // Adjust endpoint
@@ -46,9 +45,8 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(
-              fullName: fullName,
-              userId: sessionData['Id']), // Corrected extra positional argument
+          builder: (context) =>
+              HomePage(fullName: fullName, userId: sessionData['Id']),
         ),
       );
     } else {

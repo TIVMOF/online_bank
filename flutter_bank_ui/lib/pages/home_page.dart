@@ -1,4 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, unused_import
+import 'dart:convert';
+import 'dart:developer';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:online_bank/pages/sender_page.dart';
 import 'statistics_page.dart';
@@ -21,6 +24,73 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _controller = PageController();
+  final basicAuth = 'Basic ' + base64Encode(utf8.encode('admin:admin'));
+  var sessionCards = [];
+  var sessionAccounts = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData(); // Fetch data when the page initializes
+  }
+
+  Future<void> _fetchData() async {
+    final basicAuth = 'Basic ' + base64Encode(utf8.encode('admin:admin'));
+
+    try {
+      final response = await http.post(
+        Uri.parse(
+          'http://113.30.151.151:8080/services/js/dirigible-bank-server-api/card.js/getCards',
+        ),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': basicAuth,
+        },
+        body: json.encode({
+          'Id': widget.userId, // Use widget to access parameters from parent
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        sessionCards = jsonDecode(response.body);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Could not access cards!")),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("An error occurred while fetching data.")),
+      );
+    }
+
+    try {
+      final response = await http.post(
+        Uri.parse(
+          'http://113.30.151.151:8080/services/js/dirigible-bank-server-api/bankAccounts.js/getAccountByUser',
+        ),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': basicAuth,
+        },
+        body: json.encode({
+          'Id': widget.userId, // Use widget to access parameters from parent
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        sessionAccounts = jsonDecode(response.body);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Could not access Bank Accounts!")),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("An error occurred while fetching data.")),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,39 +114,29 @@ class _HomePageState extends State<HomePage> {
                 child: PageView(
                   scrollDirection: Axis.horizontal,
                   controller: _controller,
-                  children: [
-                    MyCard(
-                      balance: 5250.20,
-                      cardNumber: 12345678,
-                      expiryDate: 4,
-                      expiryMonth: 10,
-                      expiryYear: 24,
-                      color: Colors.deepPurple,
-                    ),
-                    MyCard(
-                      balance: 4250.24,
-                      cardNumber: 11345678,
-                      expiryDate: 5,
-                      expiryMonth: 11,
-                      expiryYear: 23,
-                      color: Colors.deepOrange,
-                    ),
-                    MyCard(
-                      balance: 250.99,
-                      cardNumber: 12355678,
-                      expiryDate: 3,
-                      expiryMonth: 12,
-                      expiryYear: 25,
-                      color: Colors.blue,
-                    ),
-                  ],
+                  children: sessionCards.isNotEmpty
+                      ? sessionCards.map((card) {
+                          return MyCard(
+                            balance: sessionAccounts[0]["Amount"],
+                            cardNumber: card['CardNumber'],
+                            expiryDate: 2,
+                            expiryMonth: 4,
+                            expiryYear: 2025,
+                            color: Color.fromARGB(255, 17, 6, 213),
+                          );
+                        }).toList() // Convert mapped results to a list
+                      : [
+                          Center(
+                              child: Text(
+                                  "No cards available")), // Fallback when sessionData is empty
+                        ],
                 )),
 
             SizedBox(height: 15),
 
             SmoothPageIndicator(
               controller: _controller,
-              count: 3,
+              count: sessionCards.length,
               effect: ExpandingDotsEffect(
                 activeDotColor: Colors.blue.shade900,
               ),

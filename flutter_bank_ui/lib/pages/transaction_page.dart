@@ -1,16 +1,21 @@
-// ignore_for_file: unused_import
+import 'dart:convert';
+import 'dart:developer';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import '../utill/my_transaction.dart';
 import '../utill/read_more.dart';
-
 import '../utill/app_bar.dart';
 import '../utill/bottom_app_bar.dart';
 
 class TransactionPage extends StatefulWidget {
   final String fullName;
   final int userId;
-  const TransactionPage(
-      {super.key, required this.fullName, required this.userId});
+
+  const TransactionPage({
+    Key? key,
+    required this.fullName,
+    required this.userId,
+  }) : super(key: key);
 
   @override
   State<TransactionPage> createState() => _TransactionPageState();
@@ -18,6 +23,46 @@ class TransactionPage extends StatefulWidget {
 
 class _TransactionPageState extends State<TransactionPage> {
   final _controller = PageController();
+  final basicAuth = 'Basic ' + base64Encode(utf8.encode('admin:admin'));
+  var sessionTransactions = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData(); // Fetch data when the page initializes
+  }
+
+  Future<void> _fetchData() async {
+    try {
+      final response = await http.post(
+        Uri.parse(
+          'http://113.30.151.151:8080/services/js/dirigible-bank-server-api/transactions.js/getTransactionsByUser',
+        ),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': basicAuth,
+        },
+        body: json.encode({'Id': widget.userId}),
+      );
+
+      if (response.statusCode == 200) {
+        setState(() {
+          sessionTransactions = jsonDecode(response.body);
+          log("$sessionTransactions");
+        });
+      } else {
+        _showSnackBar("Could not access transactions!");
+      }
+    } catch (e) {
+      _showSnackBar("An error occurred while fetching transactions.");
+    }
+  }
+
+  void _showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,59 +71,44 @@ class _TransactionPageState extends State<TransactionPage> {
       bottomNavigationBar: AppBarBottom(
           context: context, fullName: widget.fullName, userId: widget.userId),
       body: SafeArea(
-          child: Column(
-        children: [
-          MyAppBar(first_name: 'Трансакции', second_name: ''),
-
-          // recent transactions
-          MyRead(
-              content: 'Скорошни трансакции',
-              trimLines: 2,
-              align: TextAlign.center,
-              size: 25,
-              weight: FontWeight.bold),
-
-          Container(
-            height: 540,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 5),
-              child: Scrollbar(
-                controller: _controller,
-                child: ListView(
-                  scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            MyAppBar(first_name: 'Трансакции', second_name: ''),
+            MyRead(
+                content: 'Скорошни трансакции',
+                trimLines: 2,
+                align: TextAlign.center,
+                size: 25,
+                weight: FontWeight.bold),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: Scrollbar(
                   controller: _controller,
-                  children: [
-                    MyTransaction(
-                      recipient: 'Виктор Киров',
-                      date: '01.02.2023',
-                      sum: 20.00,
-                      sentOrReceived: false,
-                    ),
-                    MyTransaction(
-                      recipient: 'Виктор Киров',
-                      date: '25.01.2023',
-                      sum: 45.00,
-                      sentOrReceived: true,
-                    ),
-                    MyTransaction(
-                      recipient: 'Ния Божилска',
-                      date: '06.02.2023',
-                      sum: 45.50,
-                      sentOrReceived: false,
-                    ),
-                    MyTransaction(
-                      recipient: 'Велизар',
-                      date: '16.02.2023',
-                      sum: 30.50,
-                      sentOrReceived: true,
-                    ),
-                  ],
+                  child: ListView(
+                      scrollDirection: Axis.vertical,
+                      controller: _controller,
+                      children: sessionTransactions.isNotEmpty
+                          ? sessionTransactions.map((transaction) {
+                              return MyTransaction(
+                                date: transaction["Date"].toString(),
+                                recipient: transaction["Receiver"].toString(),
+                                sender: transaction["Sender"].toString(),
+                                sum: transaction["Amount"].toString(),
+                                sentOrReceived:
+                                    transaction["Receiver"].toString() ==
+                                        widget.fullName,
+                              );
+                            }).toList()
+                          : [
+                              Center(child: Text("No transactions!")),
+                            ]),
                 ),
               ),
             ),
-          )
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 }

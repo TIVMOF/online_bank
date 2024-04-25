@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyTransaction extends StatelessWidget {
   final String recipient;
+  final String sender;
   final String date;
-  final double sum;
+  final String sum;
   final bool sentOrReceived;
 
   MyTransaction({
@@ -12,6 +13,7 @@ class MyTransaction extends StatelessWidget {
     required this.date,
     required this.sum,
     required this.sentOrReceived,
+    required this.sender,
   });
 
   final backgroundSent = Color.fromARGB(255, 189, 201, 226);
@@ -61,7 +63,7 @@ class MyTransaction extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      recipient,
+                      sentOrReceived ? recipient : sender,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 18,
@@ -98,10 +100,7 @@ class MyTransaction extends StatelessWidget {
               ],
             ),
             Text(
-              (sentOrReceived ? plus : minus) +
-                  ' ' +
-                  sum.toStringAsFixed(2) +
-                  'лв',
+              (sentOrReceived ? plus : minus) + ' ' + sum + 'лв',
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 18,
