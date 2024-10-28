@@ -7,7 +7,7 @@ const viewData = {
     id: "Users",
     label: "Users",
     factory: "frame",
-    region: "center",
+    region: "left",
     link: "/services/web/dirigible-bank-server/gen/dirigible-bank-server/ui/users/Users/index.html",
     perspectiveName: "users",
 };
