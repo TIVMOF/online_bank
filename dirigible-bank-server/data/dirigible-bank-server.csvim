@@ -1,9 +1,9 @@
 {
   "files": [
     {
-      "table": "PI_CARDTYPE",
+      "table": "CARDTYPE",
       "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/CardTypes.csv",
+      "file": "/dirigible-bank-server/data/card-types.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
@@ -12,9 +12,9 @@
       "version": "1.0"
     },
     {
-      "table": "PI_BANKACCOUNTSTATUS",
+      "table": "BANKACCOUNTSTATUS",
       "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/BankAccountStatuses.csv",
+      "file": "/dirigible-bank-server/data/bank-account-statuses.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
@@ -23,9 +23,9 @@
       "version": "1.0"
     },
     {
-      "table": "PI_BANKACCOUNTTYPE",
+      "table": "BANKACCOUNTTYPE",
       "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/BankAccountTypes.csv",
+      "file": "/dirigible-bank-server/data/bank-account-types.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
@@ -34,9 +34,9 @@
       "version": "1.0"
     },
     {
-      "table": "PI_BANKACCOUNTS",
+      "table": "BANKACCOUNTS",
       "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/BankAccounts.csv",
+      "file": "/dirigible-bank-server/data/bank-accounts.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
@@ -45,9 +45,9 @@
       "version": "1.0"
     },
     {
-      "table": "PI_USERS",
+      "table": "USERS",
       "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/Users.csv",
+      "file": "/dirigible-bank-server/data/users.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
@@ -56,9 +56,31 @@
       "version": "1.0"
     },
     {
-      "table": "PI_CARDS",
+      "table": "CARDS",
       "schema": "PUBLIC",
-      "file": "/dirigible-bank-server-data/Cards.csv",
+      "file": "/dirigible-bank-server/data/cards.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
+      "table": "COUNTRIES",
+      "schema": "PUBLIC",
+      "file": "dirigible-bank-server/data/countries.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
+      "table": "CURRENCIES",
+      "schema": "PUBLIC",
+      "file": "dirigible-bank-server/data/currencies.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
